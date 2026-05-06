@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Nastaliq+Urdu:wght@400..700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
+  --font-urdu: "Noto Nastaliq Urdu", serif;
+  
+  --color-bakery-warm: #fdfcf9;
+  --color-bakery-gold: #c5a059;
+  --color-bakery-dark: #1c1917;
+  --color-bakery-muted: #78716c;
+}
+
+@layer base {
+  body {
+    @apply bg-bakery-warm text-bakery-dark font-sans antialiased overflow-x-hidden;
+  }
+}
+
+.urdu-text {
+  font-family: var(--font-urdu);
+  line-height: 2.2;
+}
+
+.glass-card {
+  @apply bg-white/20 backdrop-blur-md border border-white/30;
+}
+
+.cinematic-vignette {
+  background: radial-gradient(circle, transparent 20%, rgba(0,0,0,0.3) 100%);
+}
+
+@keyframes slow-zoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+.animate-slow-zoom {
+  animation: slow-zoom 20s linear infinite alternate;
+}
