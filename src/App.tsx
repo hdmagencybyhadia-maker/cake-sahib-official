@@ -5,7 +5,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Volume2, VolumeX, Menu, ShoppingBag, Heart, Star, MapPin, Clock, Instagram, Phone, ChevronRight } from 'lucide-react';
+import { Volume2, VolumeX, Menu, ShoppingBag, Heart, Star, MapPin, Clock, Instagram, Phone, ChevronRight, Crown } from 'lucide-react';
 
 // Cinematic Assets
 const VIDEOS = {
@@ -66,10 +66,21 @@ export default function App() {
             animate={{ opacity: 1, x: 0 }}
             className="flex items-center gap-3"
           >
-            <img src="input_file_9.png" alt="Cake Sahib Logo" className="h-10 w-10 object-contain" />
-            <h1 className="text-xl font-serif font-bold tracking-tight text-white">
-              CAKE <span className="text-bakery-gold italic font-medium">Sahib</span>
-            </h1>
+            <div className="relative group/logo">
+              <div className="absolute inset-0 bg-bakery-gold/20 blur-lg rounded-full scale-125 opacity-0 group-hover/logo:opacity-100 transition-opacity duration-700" />
+              <img 
+                src="input_file_9.png" 
+                alt="Cake Sahib Logo" 
+                className="h-12 w-12 object-contain relative z-10 transition-transform duration-500 group-hover/logo:scale-110" 
+              />
+            </div>
+            <div className="flex flex-col -gap-1">
+              <h1 className="text-xl font-serif font-bold tracking-tight text-white flex items-center gap-1.5">
+                CAKE <span className="text-bakery-gold italic font-medium">Sahib</span>
+                <Crown className="w-3 h-3 text-bakery-gold fill-bakery-gold/20 animate-pulse" />
+              </h1>
+              <span className="text-[7px] text-bakery-gold/50 tracking-[0.3em] font-bold uppercase transition-colors group-hover/logo:text-bakery-gold">Royal Patisserie</span>
+            </div>
           </motion.div>
           <div className="hidden lg:flex gap-8 font-medium text-[10px] tracking-[0.2em] uppercase text-white/60">
             {['Collections', 'Atelier', 'Our Story', 'Boutique', 'Journal'].map(item => (
@@ -117,7 +128,7 @@ export default function App() {
         <div className="relative z-10 text-center text-white px-4 max-w-5xl bg-[#1a0033]/40 backdrop-blur-[10px] p-8 md:p-16 rounded-[4rem] border border-white/10 shadow-2xl overflow-hidden">
           {/* Visible Logo Backdrop */}
           <div className="absolute inset-0 opacity-10 pointer-events-none flex items-center justify-center">
-            <img src="input_file_9.png" alt="" className="w-full h-full object-contain scale-125 md:scale-150 rotate-6" />
+            <img src="input_file_9.png" alt="" className="w-full h-full object-contain scale-125 md:scale-150 rotate-6 opacity-20" />
           </div>
 
           <motion.div
@@ -126,14 +137,22 @@ export default function App() {
             transition={{ delay: 0.5, duration: 1.2, ease: "easeOut" }}
             className="relative z-10 flex flex-col items-center"
           >
-            <motion.img 
+            <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.8, duration: 0.8 }}
-              src="input_file_9.png" 
-              alt="Cake Sahib Logo" 
-              className="w-24 h-24 md:w-36 md:h-36 object-contain mb-6 drop-shadow-2xl" 
-            />
+              className="relative group mb-6"
+            >
+              <div className="absolute inset-0 bg-bakery-gold/20 blur-2xl rounded-full animate-pulse" />
+              <img 
+                src="input_file_9.png" 
+                alt="Cake Sahib Logo" 
+                className="w-24 h-24 md:w-36 md:h-36 object-contain drop-shadow-2xl relative z-10 transition-transform duration-700 hover:scale-110" 
+              />
+              <div className="absolute -top-4 -right-4 bg-bakery-gold p-2 rounded-full shadow-2xl z-20">
+                <Crown className="w-8 h-8 text-[#1a0033] fill-[#1a0033]" />
+              </div>
+            </motion.div>
 
             <span className="uppercase tracking-[0.5em] text-[10px] font-bold text-bakery-gold mb-4 block drop-shadow-lg relative z-10">Cake Sahib • Est. 1994</span>
             <h2 className="text-5xl md:text-[8rem] font-serif font-light mb-6 leading-[0.9] drop-shadow-2xl relative z-10">
@@ -207,50 +226,51 @@ export default function App() {
               <div className="w-20 h-[1px] bg-bakery-gold/30 mx-auto mt-6" />
             </header>
 
-            {/* Product Grid */}
+            {/* Product List - Numbered layout */}
             <motion.div 
               layout
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+              className="max-w-4xl mx-auto space-y-0"
             >
               <AnimatePresence mode="popLayout">
                 {filteredProducts.map((item, idx) => (
                   <motion.div
                     key={item.id}
                     layout
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, scale: 0.9 }}
-                    transition={{ duration: 0.5, delay: idx * 0.05 }}
-                    className="group"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: idx * 0.1 }}
+                    className="group relative"
                   >
-                    <div className="relative aspect-[4/5] rounded-[2.5rem] overflow-hidden bg-[#0c001a] border border-white/10 shadow-2xl transition-all duration-700 hover:shadow-bakery-gold/20 hover:-translate-y-2">
-                      <img 
-                        src={item.image} 
-                        alt={item.name} 
-                        className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
-                        referrerPolicy="no-referrer"
-                        loading="lazy"
-                      />
-                      
-                      {/* Price Tag Overlay */}
-                      <div className="absolute top-6 right-6 px-5 py-2 bg-black/60 backdrop-blur-xl border border-white/20 rounded-full">
-                        <p className="text-white text-sm font-bold tracking-tighter">
-                          Rs. <span className="text-lg">{item.price}</span>
-                          <span className="text-[10px] text-white/50 ml-1 font-medium">{item.unit}</span>
-                        </p>
+                    <div className="flex items-center gap-8 py-10 border-b border-white/5 group-hover:bg-white/[0.02] px-6 transition-all duration-700 relative overflow-hidden">
+                      {/* Numbering */}
+                      <div className="flex-shrink-0 w-16 text-bakery-gold/20 group-hover:text-bakery-gold/80 font-serif italic text-4xl font-light transition-all duration-700">
+                        {String(idx + 1).padStart(2, '0')}—
                       </div>
 
-                      {/* Content Overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#0c001a] via-transparent to-transparent flex flex-col justify-end p-8">
-                        <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                          <p className="text-[10px] font-urdu text-bakery-gold/80 font-bold mb-1 tracking-widest uppercase">{item.urdu}</p>
-                          <h4 className="text-2xl font-serif text-white mb-4 leading-none">{item.name}</h4>
-                          
-                          <button className="w-full py-4 bg-white/10 hover:bg-bakery-gold border border-white/10 hover:border-bakery-gold text-white rounded-2xl text-[9px] uppercase tracking-[0.3em] font-bold transition-all flex items-center justify-center gap-2 backdrop-blur-sm opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 duration-500 delay-75">
-                            <ShoppingBag className="w-3 h-3" /> Add to Order
-                          </button>
+                      {/* Image Thumbnail (Luxury minimal style) */}
+                      <div className="hidden md:block w-20 h-20 rounded-full overflow-hidden border border-white/10 group-hover:border-bakery-gold/30 transition-all duration-700">
+                        <img src={item.image} alt={item.name} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110" />
+                      </div>
+
+                      {/* Item Details */}
+                      <div className="flex-grow">
+                        <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-4">
+                          <h4 className="text-2xl md:text-3xl font-serif text-white/90 tracking-tight group-hover:text-bakery-gold transition-colors duration-500">{item.name}</h4>
+                          <div className="hidden md:block flex-grow mx-8 border-b border-dotted border-white/5 transition-opacity" />
+                          <p className="text-bakery-gold font-light tracking-widest text-xl whitespace-nowrap">
+                            Rs. {item.price}<span className="text-[10px] text-white/30 ml-2 font-medium uppercase">{item.unit}</span>
+                          </p>
+                        </div>
+                        <div className="flex items-center gap-4 mt-3">
+                          <p className="text-[12px] font-urdu text-white/20 group-hover:text-white/50 tracking-[0.2em] uppercase transition-colors">{item.urdu}</p>
+                          <div className="h-[1px] w-4 bg-bakery-gold/20" />
+                          <span className="text-[8px] text-bakery-gold/40 tracking-widest uppercase">Gourmet Selection</span>
                         </div>
                       </div>
+
+                      {/* Order Button (Minimalist dot) */}
+                      <div className="flex-shrink-0 w-2 h-2 rounded-full bg-bakery-gold/20 group-hover:bg-bakery-gold group-hover:scale-150 transition-all duration-500" />
                     </div>
                   </motion.div>
                 ))}
@@ -337,9 +357,22 @@ export default function App() {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
             <div className="md:col-span-2 space-y-8">
-              <div className="flex items-center gap-4">
-                <img src="input_file_9.png" alt="Cake Sahib Logo" className="h-16 w-16 object-contain" />
-                <h2 className="text-3xl font-serif font-bold tracking-tighter uppercase">CAKE <span className="text-bakery-gold italic font-medium">Sahib</span></h2>
+              <div className="flex items-center gap-6 group/footer-logo">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-bakery-gold/20 blur-xl rounded-full scale-150 animate-pulse" />
+                  <img 
+                    src="input_file_9.png" 
+                    alt="Cake Sahib Logo" 
+                    className="h-20 w-20 object-contain relative z-10 transition-transform duration-500 group-hover/footer-logo:scale-110" 
+                  />
+                  <div className="absolute -top-2 -right-2 bg-bakery-gold p-1 rounded-full shadow-lg z-20">
+                    <Crown className="w-4 h-4 text-[#1a0033] fill-[#1a0033]" />
+                  </div>
+                </div>
+                <div className="flex flex-col">
+                  <h2 className="text-3xl font-serif font-bold tracking-tighter uppercase text-white">CAKE <span className="text-bakery-gold italic font-medium">Sahib</span></h2>
+                  <span className="text-[9px] text-bakery-gold tracking-[0.4em] font-bold uppercase">The Art of Baking</span>
+                </div>
               </div>
               <p className="text-white/40 font-light leading-relaxed max-w-sm text-sm">
                 Crafting royal delicacies since 1994. Every creation is a masterpiece designed to elevate your celebrations with timeless taste.
@@ -364,7 +397,7 @@ export default function App() {
             <div className="space-y-6">
               <h5 className="text-[10px] font-bold uppercase tracking-widest text-bakery-gold">Boutique Info</h5>
               <ul className="space-y-4 text-sm text-white/50 font-light">
-                <li className="flex items-center gap-3"><MapPin className="w-4 h-4 text-bakery-gold" /> Lahore, Pakistan</li>
+                <li className="flex items-center gap-3"><MapPin className="w-4 h-4 text-bakery-gold" /> Rahim Yar Khan, Pakistan</li>
                 <li className="flex items-center gap-3"><Phone className="w-4 h-4 text-bakery-gold" /> 03120402140</li>
                 <li className="flex items-center gap-3"><Clock className="w-4 h-4 text-bakery-gold" /> 10:00 AM - 10:00 PM</li>
               </ul>
