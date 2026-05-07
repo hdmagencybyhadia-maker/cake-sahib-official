@@ -117,24 +117,24 @@ export default function App() {
         {/* Content Overlay */}
         <div className="relative z-10 text-center text-white px-4 max-w-5xl">
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 1.2, ease: "easeOut" }}
-            className="relative z-10 flex flex-col items-center"
+            className="relative z-10 flex flex-col items-center px-4 mt-12 md:mt-20"
           >
             <motion.h1 
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.8, duration: 0.8 }}
-              className="text-6xl md:text-9xl font-serif text-white font-bold tracking-tighter mb-8 drop-shadow-2xl"
+              className="text-4xl sm:text-6xl md:text-9xl font-serif text-white font-bold tracking-tighter mb-6 md:mb-8 drop-shadow-2xl"
             >
-              <span className="text-white/80 font-light block text-4xl md:text-6xl mb-4 italic">Welcome to</span>
+              <span className="text-white/80 font-light block text-xl sm:text-3xl md:text-6xl mb-2 md:mb-4 italic tracking-[0.2em] sm:tracking-[0.4em]">Welcome to</span>
               <span className="text-bakery-gold drop-shadow-[0_0_30px_rgba(197,160,89,0.4)]">Cake Sahib</span>
             </motion.h1>
 
-            <div className="w-24 h-[2px] bg-gradient-to-r from-transparent via-bakery-gold to-transparent mb-8" />
+            <div className="w-16 md:w-24 h-[1px] bg-gradient-to-r from-transparent via-bakery-gold to-transparent mb-6 md:mb-8" />
             
-            <span className="uppercase tracking-[0.8em] text-[12px] font-bold text-bakery-gold mb-4 block drop-shadow-lg relative z-10 opacity-80">Royal Patisserie • Since 1994</span>
+            <span className="uppercase tracking-[0.3em] md:tracking-[0.8em] text-[8px] md:text-[12px] font-bold text-bakery-gold mb-4 block drop-shadow-lg relative z-10 opacity-80">Royal Patisserie • Since 1994</span>
           </motion.div>
 
           <AnimatePresence mode="wait">
@@ -202,52 +202,42 @@ export default function App() {
               <div className="w-20 h-[1px] bg-bakery-gold/30 mx-auto mt-6" />
             </header>
 
-            {/* Vertical List Menu */}
+            {/* Compact 3-Column Circular Menu */}
             <motion.div 
               layout
-              className="max-w-4xl mx-auto space-y-8"
+              className="grid grid-cols-2 lg:grid-cols-3 gap-y-12 gap-x-8 max-w-4xl mx-auto px-4"
             >
-              <AnimatePresence mode="popLayout">
+              <AnimatePresence mode="wait">
                 {filteredProducts.map((item, idx) => (
                   <motion.div
                     key={item.id}
                     layout
-                    initial={{ opacity: 0, x: -30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: idx * 0.1 }}
-                    className="group"
+                    className="flex flex-col items-center text-center group"
                   >
-                    <div className="relative flex flex-col md:flex-row items-center gap-8 md:gap-12 p-6 md:p-10 border-b border-white/10 hover:bg-white/5 transition-all duration-500 group">
-                      {/* Number Index */}
-                      <div className="flex-shrink-0 w-16 md:w-20">
-                        <span className="text-4xl md:text-6xl font-serif font-black text-bakery-gold/40 group-hover:text-bakery-gold transition-colors">{idx + 1}</span>
-                      </div>
-
-                      <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-2xl overflow-hidden flex-shrink-0 group-hover:scale-105 transition-transform duration-700 z-10">
-                        <img 
-                          src={item.image} 
-                          alt={item.name} 
-                          className="w-full h-full object-cover"
-                          loading="lazy"
-                        />
-                      </div>
-
-                      <div className="flex-1 text-center md:text-left z-10">
-                        <p className="text-[12px] font-serif italic text-bakery-gold/70 mb-1">{item.urdu}</p>
-                        <h4 className="text-2xl md:text-4xl font-serif text-white leading-tight tracking-tight">{item.name}</h4>
-                      </div>
-
-                      <div className="flex flex-col items-center md:items-end justify-center z-10 gap-4">
-                        <p className="text-white text-xl md:text-2xl font-light tracking-wider whitespace-nowrap">
-                          Rs. {item.price} <span className="text-[10px] text-white/30 font-medium uppercase">{item.unit || '/ pc'}</span>
-                        </p>
-                        <button className="flex items-center gap-2 text-bakery-gold hover:text-white transition-colors uppercase text-[9px] font-bold tracking-[0.2em]">
-                          <ShoppingBag className="w-4 h-4" />
-                          Add to Order
-                        </button>
-                      </div>
+                    {/* 1. Pic (Circular) */}
+                    <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden mb-4 border border-white/10 group-hover:border-bakery-gold/50 transition-colors bg-white/5">
+                      <img 
+                        src={item.image} 
+                        alt={item.name} 
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                        loading="lazy"
+                      />
                     </div>
+
+                    {/* 2. Name */}
+                    <div className="space-y-1">
+                      <span className="text-[10px] font-bold text-white/20 block mb-1">Item {String(idx + 1).padStart(2, '0')}</span>
+                      <p className="text-[9px] text-bakery-gold/50 italic">{item.urdu}</p>
+                      <h4 className="text-sm md:text-lg font-serif text-white group-hover:text-bakery-gold transition-colors">{item.name}</h4>
+                    </div>
+
+                    {/* 3. Rate */}
+                    <p className="mt-2 text-bakery-gold font-light tracking-widest text-xs md:text-sm">Rs. {item.price}</p>
+                    
+                    <button className="mt-3 text-[8px] font-bold text-white/20 uppercase tracking-[0.2em] hover:text-white transition-colors">Order Now</button>
                   </motion.div>
                 ))}
               </AnimatePresence>
