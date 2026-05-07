@@ -17,8 +17,8 @@ const VIDEOS = {
 const PRICE_LIST = [
   { id: 2, category: "Menu", name: "Customized Cake", price: "1400", unit: "/ lb", urdu: "کسٹمائزڈ کیک", image: "https://images.unsplash.com/photo-1535254844612-9c176709841b?auto=format&fit=crop&q=80&w=800" },
   { id: 4, category: "Menu", name: "Red Velvet Cake", price: "2000", unit: "/ lb", urdu: "ریڈ وایلویٹ کیک", image: "https://images.unsplash.com/photo-1616541823729-00fe0aacd32c?auto=format&fit=crop&q=80&w=800" },
-  { id: 5, category: "Menu", name: "Pineapple Cake", price: "1200", unit: "/ lb", urdu: "پائن ایپل کیک", image: "https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&q=80&w=800" },
-  { id: 6, category: "Menu", name: "Chocolate Cake", price: "1500", unit: "/ lb", urdu: "چاکلیٹ کیک", image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&q=80&w=800" },
+  { id: 5, category: "Menu", name: "Pineapple Cake", price: "1200", unit: "/ lb", urdu: "رنگین عید کیک", image: "https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&q=80&w=800" },
+  { id: 6, category: "Menu", name: "Chocolate Cake", price: "1500", unit: "/ lb", urdu: "کٹھائی میٹھی کیک", image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&q=80&w=800" },
   { id: 11, category: "Menu", name: "Nutella Malt Cake", price: "3000", unit: "/ lb", urdu: "نٹیلا مالٹ کیک", image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&q=80&w=800" },
   { id: 13, category: "Menu", name: "Full Fondant Cake", price: "1500", unit: "/ lb", urdu: "فل فونڈنٹ کیک", image: "https://images.unsplash.com/photo-1535141192574-5d4897c12636?auto=format&fit=crop&q=80&w=800" },
   { id: 1, category: "Menu", name: "Simple Cupcake", price: "100", unit: "", urdu: "سادہ کپ کیک", image: "https://images.unsplash.com/photo-1550617931-e17a7b70dce2?auto=format&fit=crop&q=80&w=800" },
@@ -64,22 +64,12 @@ export default function App() {
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="flex items-center gap-3"
+            className="flex items-center gap-3 cursor-pointer group/nav-logo text-white"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
-            <div className="relative group/logo">
-              <div className="absolute inset-0 bg-bakery-gold/20 blur-lg rounded-full scale-125 opacity-0 group-hover/logo:opacity-100 transition-opacity duration-700" />
-              <img 
-                src="input_file_9.png" 
-                alt="Cake Sahib Logo" 
-                className="h-12 w-12 object-contain relative z-10 transition-transform duration-500 group-hover/logo:scale-110" 
-              />
-            </div>
-            <div className="flex flex-col -gap-1">
-              <h1 className="text-xl font-serif font-bold tracking-tight text-white flex items-center gap-1.5">
-                CAKE <span className="text-bakery-gold italic font-medium">Sahib</span>
-                <Crown className="w-3 h-3 text-bakery-gold fill-bakery-gold/20 animate-pulse" />
-              </h1>
-              <span className="text-[7px] text-bakery-gold/50 tracking-[0.3em] font-bold uppercase transition-colors group-hover/logo:text-bakery-gold">Royal Patisserie</span>
+            <div className="flex flex-col">
+              <span className="text-xl font-serif text-bakery-gold font-bold tracking-tight uppercase group-hover:text-white transition-all leading-none">Cake Sahib</span>
+              <span className="text-[8px] text-white/40 font-bold tracking-[0.4em] uppercase">Est. 1994</span>
             </div>
           </motion.div>
           <div className="hidden lg:flex gap-8 font-medium text-[10px] tracking-[0.2em] uppercase text-white/60">
@@ -98,7 +88,7 @@ export default function App() {
 
           <div className="relative text-white">
             <ShoppingBag className="w-6 h-6 cursor-pointer hover:text-bakery-gold transition-colors" />
-            <span className="absolute -top-1 -right-1 w-4 h-4 bg-bakery-gold text-white text-[10px] flex items-center justify-center rounded-full border border-white/20 shadow-lg font-bold">3</span>
+            <span className="absolute -top-1 -right-1 w-4 h-4 bg-bakery-gold text-[#1a0033] text-[10px] flex items-center justify-center rounded-full border border-white/20 shadow-lg font-bold">3</span>
           </div>
         </div>
       </nav>
@@ -125,40 +115,26 @@ export default function App() {
         </div>
 
         {/* Content Overlay */}
-        <div className="relative z-10 text-center text-white px-4 max-w-5xl bg-[#1a0033]/40 backdrop-blur-[10px] p-8 md:p-16 rounded-[4rem] border border-white/10 shadow-2xl overflow-hidden">
-          {/* Visible Logo Backdrop */}
-          <div className="absolute inset-0 opacity-10 pointer-events-none flex items-center justify-center">
-            <img src="input_file_9.png" alt="" className="w-full h-full object-contain scale-125 md:scale-150 rotate-6 opacity-20" />
-          </div>
-
+        <div className="relative z-10 text-center text-white px-4 max-w-5xl">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 1.2, ease: "easeOut" }}
             className="relative z-10 flex flex-col items-center"
           >
-            <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
+            <motion.h1 
+              initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.8, duration: 0.8 }}
-              className="relative group mb-6"
+              className="text-6xl md:text-9xl font-serif text-white font-bold tracking-tighter mb-8 drop-shadow-2xl"
             >
-              <div className="absolute inset-0 bg-bakery-gold/20 blur-2xl rounded-full animate-pulse" />
-              <img 
-                src="input_file_9.png" 
-                alt="Cake Sahib Logo" 
-                className="w-24 h-24 md:w-36 md:h-36 object-contain drop-shadow-2xl relative z-10 transition-transform duration-700 hover:scale-110" 
-              />
-              <div className="absolute -top-4 -right-4 bg-bakery-gold p-2 rounded-full shadow-2xl z-20">
-                <Crown className="w-8 h-8 text-[#1a0033] fill-[#1a0033]" />
-              </div>
-            </motion.div>
+              <span className="text-white/80 font-light block text-4xl md:text-6xl mb-4 italic">Welcome to</span>
+              <span className="text-bakery-gold drop-shadow-[0_0_30px_rgba(197,160,89,0.4)]">Cake Sahib</span>
+            </motion.h1>
 
-            <span className="uppercase tracking-[0.5em] text-[10px] font-bold text-bakery-gold mb-4 block drop-shadow-lg relative z-10">Cake Sahib • Est. 1994</span>
-            <h2 className="text-5xl md:text-[8rem] font-serif font-light mb-6 leading-[0.9] drop-shadow-2xl relative z-10">
-              <span className="text-white/90">Welcome to</span> <br />
-              <span className="italic font-normal text-bakery-gold">Cake Sahib</span>
-            </h2>
+            <div className="w-24 h-[2px] bg-gradient-to-r from-transparent via-bakery-gold to-transparent mb-8" />
+            
+            <span className="uppercase tracking-[0.8em] text-[12px] font-bold text-bakery-gold mb-4 block drop-shadow-lg relative z-10 opacity-80">Royal Patisserie • Since 1994</span>
           </motion.div>
 
           <AnimatePresence mode="wait">
@@ -184,7 +160,7 @@ export default function App() {
             transition={{ delay: 1.5, duration: 1 }}
             className="mt-12 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8"
           >
-            <button className="w-full md:w-auto px-10 py-4 bg-bakery-gold text-white rounded-full font-bold tracking-widest uppercase text-[10px] transition-all shadow-2xl hover:bg-white hover:text-bakery-gold hover:scale-105 active:scale-95 group">
+            <button className="w-full md:w-auto px-10 py-4 bg-bakery-gold text-[#1a0033] rounded-full font-bold tracking-widest uppercase text-[10px] transition-all shadow-2xl hover:bg-white hover:text-bakery-gold hover:scale-105 active:scale-95 group">
               View Collection
               <span className="inline-block ml-2 transition-transform group-hover:translate-x-1">→</span>
             </button>
@@ -221,56 +197,56 @@ export default function App() {
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-6xl mx-auto">
             <header className="mb-20 text-center space-y-4">
-              <span className="text-bakery-gold uppercase tracking-[0.6em] text-[10px] font-bold">Selected Delicacies</span>
+              <span className="text-bakery-gold uppercase tracking-[0.6em] text-[10px] font-bold">Menu Collection</span>
               <h3 className="text-5xl md:text-7xl font-serif text-white tracking-tight">Our <span className="italic text-bakery-gold/80 font-light">Menu</span></h3>
               <div className="w-20 h-[1px] bg-bakery-gold/30 mx-auto mt-6" />
             </header>
 
-            {/* Product List - Numbered layout */}
+            {/* Vertical List Menu */}
             <motion.div 
               layout
-              className="max-w-4xl mx-auto space-y-0"
+              className="max-w-4xl mx-auto space-y-8"
             >
               <AnimatePresence mode="popLayout">
                 {filteredProducts.map((item, idx) => (
                   <motion.div
                     key={item.id}
                     layout
-                    initial={{ opacity: 0, x: -20 }}
+                    initial={{ opacity: 0, x: -30 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: idx * 0.1 }}
-                    className="group relative"
+                    className="group"
                   >
-                    <div className="flex items-center gap-8 py-10 border-b border-white/5 group-hover:bg-white/[0.02] px-6 transition-all duration-700 relative overflow-hidden">
-                      {/* Numbering */}
-                      <div className="flex-shrink-0 w-16 text-bakery-gold/20 group-hover:text-bakery-gold/80 font-serif italic text-4xl font-light transition-all duration-700">
-                        {String(idx + 1).padStart(2, '0')}—
+                    <div className="relative flex flex-col md:flex-row items-center gap-8 md:gap-12 p-6 md:p-10 border-b border-white/10 hover:bg-white/5 transition-all duration-500 group">
+                      {/* Number Index */}
+                      <div className="flex-shrink-0 w-16 md:w-20">
+                        <span className="text-4xl md:text-6xl font-serif font-black text-bakery-gold/40 group-hover:text-bakery-gold transition-colors">{idx + 1}</span>
                       </div>
 
-                      {/* Image Thumbnail (Luxury minimal style) */}
-                      <div className="hidden md:block w-20 h-20 rounded-full overflow-hidden border border-white/10 group-hover:border-bakery-gold/30 transition-all duration-700">
-                        <img src={item.image} alt={item.name} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110" />
+                      <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-2xl overflow-hidden flex-shrink-0 group-hover:scale-105 transition-transform duration-700 z-10">
+                        <img 
+                          src={item.image} 
+                          alt={item.name} 
+                          className="w-full h-full object-cover"
+                          loading="lazy"
+                        />
                       </div>
 
-                      {/* Item Details */}
-                      <div className="flex-grow">
-                        <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-4">
-                          <h4 className="text-2xl md:text-3xl font-serif text-white/90 tracking-tight group-hover:text-bakery-gold transition-colors duration-500">{item.name}</h4>
-                          <div className="hidden md:block flex-grow mx-8 border-b border-dotted border-white/5 transition-opacity" />
-                          <p className="text-bakery-gold font-light tracking-widest text-xl whitespace-nowrap">
-                            Rs. {item.price}<span className="text-[10px] text-white/30 ml-2 font-medium uppercase">{item.unit}</span>
-                          </p>
-                        </div>
-                        <div className="flex items-center gap-4 mt-3">
-                          <p className="text-[12px] font-urdu text-white/20 group-hover:text-white/50 tracking-[0.2em] uppercase transition-colors">{item.urdu}</p>
-                          <div className="h-[1px] w-4 bg-bakery-gold/20" />
-                          <span className="text-[8px] text-bakery-gold/40 tracking-widest uppercase">Gourmet Selection</span>
-                        </div>
+                      <div className="flex-1 text-center md:text-left z-10">
+                        <p className="text-[12px] font-serif italic text-bakery-gold/70 mb-1">{item.urdu}</p>
+                        <h4 className="text-2xl md:text-4xl font-serif text-white leading-tight tracking-tight">{item.name}</h4>
                       </div>
 
-                      {/* Order Button (Minimalist dot) */}
-                      <div className="flex-shrink-0 w-2 h-2 rounded-full bg-bakery-gold/20 group-hover:bg-bakery-gold group-hover:scale-150 transition-all duration-500" />
+                      <div className="flex flex-col items-center md:items-end justify-center z-10 gap-4">
+                        <p className="text-white text-xl md:text-2xl font-light tracking-wider whitespace-nowrap">
+                          Rs. {item.price} <span className="text-[10px] text-white/30 font-medium uppercase">{item.unit || '/ pc'}</span>
+                        </p>
+                        <button className="flex items-center gap-2 text-bakery-gold hover:text-white transition-colors uppercase text-[9px] font-bold tracking-[0.2em]">
+                          <ShoppingBag className="w-4 h-4" />
+                          Add to Order
+                        </button>
+                      </div>
                     </div>
                   </motion.div>
                 ))}
@@ -306,16 +282,32 @@ export default function App() {
             </div>
 
             <div className="lg:w-1/2 relative">
-               <div className="relative aspect-square rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl">
+               <div className="relative aspect-square rounded-[3rem] overflow-hidden shadow-2xl">
                  <video autoPlay loop muted playsInline className="w-full h-full object-cover">
                    <source src={VIDEOS.showcase} type="video/mp4" />
                  </video>
                  <div className="absolute inset-0 bg-purple-900/20" />
                </div>
-               {/* Floating Badge */}
-               <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-bakery-gold rounded-full flex items-center justify-center p-8 text-center text-white border-8 border-[#1a0033] shadow-2xl">
-                 <p className="text-sm font-serif italic font-medium leading-tight">"A legacy of sweetness since 1994"</p>
-               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Visionary Section */}
+      <section className="py-32 bg-[#0c001a] relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[30rem] h-[30rem] bg-pink-500/5 rounded-full blur-[100px] translate-x-1/2 -translate-y-1/2" />
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="max-w-3xl mx-auto text-center space-y-8">
+            <div className="space-y-4">
+              <span className="text-bakery-gold uppercase tracking-[0.5em] text-[10px] font-bold">Our Legacy</span>
+              <h3 className="text-4xl md:text-6xl font-serif text-white">The Heart of <span className="italic font-light text-bakery-gold text-5xl md:text-7xl">Cake Sahib</span></h3>
+            </div>
+            <p className="text-white/60 text-lg md:text-xl font-light leading-relaxed">
+              Our journey began over three decades ago with a simple mission: to transform the finest ingredients into royal masterpieces. Every creation is a testament to our legacy of quality, devotion, and the artisanal excellence that defines celebrations across Pakistan.
+            </p>
+            <div className="pt-8 flex flex-wrap justify-center gap-4">
+               <div className="px-8 py-3 rounded-full border border-bakery-gold/20 text-bakery-gold text-[11px] font-bold tracking-widest uppercase">Master Patissiers</div>
+               <div className="px-8 py-3 rounded-full border border-bakery-gold/20 text-bakery-gold text-[11px] font-bold tracking-widest uppercase">Since 1994</div>
             </div>
           </div>
         </div>
@@ -357,22 +349,11 @@ export default function App() {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
             <div className="md:col-span-2 space-y-8">
-              <div className="flex items-center gap-6 group/footer-logo">
-                <div className="relative">
-                  <div className="absolute inset-0 bg-bakery-gold/20 blur-xl rounded-full scale-150 animate-pulse" />
-                  <img 
-                    src="input_file_9.png" 
-                    alt="Cake Sahib Logo" 
-                    className="h-20 w-20 object-contain relative z-10 transition-transform duration-500 group-hover/footer-logo:scale-110" 
-                  />
-                  <div className="absolute -top-2 -right-2 bg-bakery-gold p-1 rounded-full shadow-lg z-20">
-                    <Crown className="w-4 h-4 text-[#1a0033] fill-[#1a0033]" />
-                  </div>
-                </div>
-                <div className="flex flex-col">
-                  <h2 className="text-3xl font-serif font-bold tracking-tighter uppercase text-white">CAKE <span className="text-bakery-gold italic font-medium">Sahib</span></h2>
-                  <span className="text-[9px] text-bakery-gold tracking-[0.4em] font-bold uppercase">The Art of Baking</span>
-                </div>
+              <div className="flex flex-col">
+                <span className="text-4xl font-serif text-bakery-gold font-bold tracking-tight mb-2">Cake Sahib</span>
+                <span className="text-[10px] text-bakery-gold tracking-[0.5em] font-bold uppercase mb-1">Established 1994</span>
+                <div className="h-[1px] w-12 bg-bakery-gold/40 mb-3" />
+                <p className="text-white/60 text-xs font-light tracking-widest uppercase">The Royal Art of Confectionery</p>
               </div>
               <p className="text-white/40 font-light leading-relaxed max-w-sm text-sm">
                 Crafting royal delicacies since 1994. Every creation is a masterpiece designed to elevate your celebrations with timeless taste.

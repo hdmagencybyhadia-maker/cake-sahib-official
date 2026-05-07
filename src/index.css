@@ -14,7 +14,7 @@
 
 @layer base {
   body {
-    @apply bg-bakery-warm text-bakery-dark font-sans antialiased overflow-x-hidden;
+    @apply bg-[#0c001a] text-white font-sans antialiased overflow-x-hidden;
   }
 }
 
