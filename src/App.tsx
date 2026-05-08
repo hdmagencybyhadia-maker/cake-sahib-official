@@ -14,6 +14,7 @@ import redVelvetCakeImg from './assets/images/regenerated_image_1778268371906.we
 import pineappleCakeImg from './assets/images/regenerated_image_1778268730196.jpg';
 import rusticPineappleCakeImg from './assets/images/regenerated_image_1778274411431.jpg';
 import rusticChocolateCakeImg from './assets/images/regenerated_image_1778271393772.jpg';
+import freshDonutImg from './assets/images/regenerated_image_1778274801132.jpg';
 
 const VIDEOS = {
   hero: "https://assets.mixkit.co/videos/preview/mixkit-freshly-baked-bread-in-a-bakery-4100-large.mp4",
@@ -32,7 +33,7 @@ const PRICE_LIST = [
   { id: 12, category: "Menu", name: "Customized Cupcake", price: "150", unit: "", urdu: "کسٹمائزڈ کپ کیک", image: "https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&fit=crop&q=80&w=800" },
   { id: 9, category: "Menu", name: "Rustic Sliced tea cake (Pineapple)", price: "750", unit: "/ lb", urdu: "رسٹک سلائسڈ ٹی کیک (پائن ایپل)", image: rusticPineappleCakeImg },
   { id: 8, category: "Menu", name: "Rustic Sliced tea cake (Chocolate)", price: "750", unit: "/ lb", urdu: "رسٹک سلائسڈ ٹی کیک (چاکلیٹ)", image: rusticChocolateCakeImg },
-  { id: 3, category: "Menu", name: "Fresh Donut", price: "150", unit: "", urdu: "تازہ ڈونٹس", image: "https://images.unsplash.com/photo-1551024681-a535daad60b9?auto=format&fit=crop&q=80&w=800" }
+  { id: 3, category: "Menu", name: "Fresh Donut", price: "150", unit: "", urdu: "تازہ ڈونٹس", image: freshDonutImg }
 ];
 
 const ADDONS = [
