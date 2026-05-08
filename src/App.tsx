@@ -276,7 +276,6 @@ function MainApp() {
                             <img src={item.image} alt={item.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                           </div>
                           <div className="space-y-1">
-                            <span className="text-sm font-bold text-white/20 block mb-1">Item {String(idx + 1).padStart(2, '0')}</span>
                             <p className="text-sm text-bakery-gold/50 italic">{item.urdu}</p>
                             <h4 className="text-xl md:text-2xl font-serif text-white group-hover:text-bakery-gold transition-colors">{item.name}</h4>
                           </div>
