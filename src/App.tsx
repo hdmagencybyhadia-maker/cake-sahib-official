@@ -87,7 +87,6 @@ function MainApp() {
           >
             <div className="flex flex-col">
               <span className="text-xl font-serif text-bakery-gold font-bold tracking-tight uppercase group-hover:text-white transition-all leading-none">Cake Sahib</span>
-              <span className="text-[8px] text-white/40 font-bold tracking-[0.4em] uppercase">Est. 1994</span>
             </div>
           </Link>
           <div className="hidden lg:flex gap-8 font-medium text-[10px] tracking-[0.2em] uppercase text-white/60">
@@ -151,7 +150,7 @@ function MainApp() {
 
                     <div className="w-16 md:w-24 h-[1px] bg-gradient-to-r from-transparent via-bakery-gold to-transparent mb-6 md:mb-8" />
                     
-                    <span className="uppercase tracking-[0.3em] md:tracking-[0.8em] text-[8px] md:text-[12px] font-bold text-bakery-gold mb-4 block drop-shadow-lg relative z-10 opacity-80">Royal Patisserie • Since 1994</span>
+                    <span className="uppercase tracking-[0.3em] md:tracking-[0.8em] text-[8px] md:text-[12px] font-bold text-bakery-gold mb-4 block drop-shadow-lg relative z-10 opacity-80">Royal Patisserie • Since 2020</span>
                   </motion.div>
 
                   <motion.div
@@ -248,7 +247,14 @@ function MainApp() {
                             <h4 className="text-sm md:text-lg font-serif text-white group-hover:text-bakery-gold transition-colors">{item.name}</h4>
                           </div>
                           <p className="mt-2 text-bakery-gold font-light tracking-widest text-xs md:text-sm">Rs. {item.price}</p>
-                          <button className="mt-3 text-[8px] font-bold text-white/20 uppercase tracking-[0.2em] hover:text-white transition-colors">Order Now</button>
+                          <a 
+                            href={`https://wa.me/923120402140?text=${encodeURIComponent(`Hello! I would like to order the ${item.name} (${item.urdu}) from your menu.`)}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="mt-3 text-[8px] font-bold text-white uppercase tracking-[0.2em] hover:text-bakery-gold transition-colors"
+                          >
+                            Order Now
+                          </a>
                         </motion.div>
                       ))}
                     </div>
@@ -298,12 +304,12 @@ function MainApp() {
             <div className="md:col-span-2 space-y-8">
               <div className="flex flex-col">
                 <span className="text-4xl font-serif text-bakery-gold font-bold tracking-tight mb-2">Cake Sahib</span>
-                <span className="text-[10px] text-bakery-gold tracking-[0.5em] font-bold uppercase mb-1">Established 1994</span>
+                <span className="text-[10px] text-bakery-gold tracking-[0.5em] font-bold uppercase mb-1">Established 2020</span>
                 <div className="h-[1px] w-12 bg-bakery-gold/40 mb-3" />
                 <p className="text-white/60 text-xs font-light tracking-widest uppercase">The Royal Art of Confectionery</p>
               </div>
               <p className="text-white/40 font-light leading-relaxed max-w-sm text-sm">
-                Crafting royal delicacies since 1994. Every creation is a masterpiece designed to elevate your celebrations with timeless taste.
+                Crafting royal delicacies since 2020. Every creation is a masterpiece designed to elevate your celebrations with timeless taste.
               </p>
               <div className="flex gap-4">
                  <a href="https://instagram.com/cake_sahib" className="p-3 rounded-full bg-white/5 border border-white/10 hover:border-bakery-gold transition-colors group">
