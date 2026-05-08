@@ -16,9 +16,9 @@ const VIDEOS = {
 };
 
 const PRICE_LIST = [
-  { id: 2, category: "Menu", name: "Customized Cake", price: "1400", unit: "/ lb", urdu: "کسٹمائزڈ کیک", image: "https://images.unsplash.com/photo-1535254844612-9c176709841b?auto=format&fit=crop&q=80&w=800" },
-  { id: 4, category: "Menu", name: "Red Velvet Cake", price: "2000", unit: "/ lb", urdu: "ریڈ وایلویٹ کیک", image: "https://images.unsplash.com/photo-1616541823729-00fe0aacd32c?auto=format&fit=crop&q=80&w=800" },
-  { id: 5, category: "Menu", name: "Pineapple Cake", price: "1200", unit: "/ lb", urdu: "رنگین عید کیک", image: "https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&q=80&w=800" },
+  { id: 2, category: "Menu", name: "Customized Cake", price: "1400", unit: "/ lb", urdu: "کسٹمائزڈ کیک", image: "https://images.unsplash.com/photo-1562777717-dc6984f65a63?auto=format&fit=crop&q=80&w=800" },
+  { id: 4, category: "Menu", name: "Red Velvet Cake", price: "2000", unit: "/ lb", urdu: "ریڈ وایلویٹ کیک", image: "https://images.unsplash.com/photo-1586788617534-916924f3f976?auto=format&fit=crop&q=80&w=800" },
+  { id: 5, category: "Menu", name: "Pineapple Cake", price: "1200", unit: "/ lb", urdu: "رنگین عید کیک", image: "https://images.unsplash.com/photo-1557308535-44218ac4931e?auto=format&fit=crop&q=80&w=800" },
   { id: 6, category: "Menu", name: "Chocolate Cake", price: "1500", unit: "/ lb", urdu: "کٹھائی میٹھی کیک", image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&q=80&w=800" },
   { id: 11, category: "Menu", name: "Nutella Malt Cake", price: "3000", unit: "/ lb", urdu: "نٹیلا مالٹ کیک", image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&q=80&w=800" },
   { id: 13, category: "Menu", name: "Full Fondant Cake", price: "1500", unit: "/ lb", urdu: "فل فونڈنٹ کیک", image: "https://images.unsplash.com/photo-1535141192574-5d4897c12636?auto=format&fit=crop&q=80&w=800" },
@@ -27,7 +27,6 @@ const PRICE_LIST = [
   { id: 3, category: "Menu", name: "Fresh Donut", price: "150", unit: "", urdu: "تازہ ڈونٹس", image: "https://images.unsplash.com/photo-1551024681-a535daad60b9?auto=format&fit=crop&q=80&w=800" },
   { id: 8, category: "Menu", name: "Rustic Sliced tea cake (Chocolate)", price: "750", unit: "/ lb", urdu: "رسٹک سلائسڈ ٹی کیک (چاکلیٹ)", image: "https://images.unsplash.com/photo-1601662528567-526cd06f6582?auto=format&fit=crop&q=80&w=800" },
   { id: 9, category: "Menu", name: "Rustic Sliced tea cake (Pineapple)", price: "750", unit: "/ lb", urdu: "رسٹک سلائسڈ ٹی کیک (پائن ایپل)", image: "https://images.unsplash.com/photo-1549440386-880c1032df38?auto=format&fit=crop&q=80&w=800" }
-
 ];
 
 const ADDONS = [
@@ -89,7 +88,7 @@ function MainApp() {
               <span className="text-xl font-serif text-bakery-gold font-bold tracking-tight uppercase group-hover:text-white transition-all leading-none">Cake Sahib</span>
             </div>
           </Link>
-          <div className="hidden lg:flex gap-8 font-medium text-[10px] tracking-[0.2em] uppercase text-white/60">
+          <div className="hidden lg:flex gap-8 font-medium text-[13px] tracking-[0.2em] uppercase text-white/60">
             {['Collections', 'Atelier', 'Our Story', 'Boutique', 'Journal'].map(item => (
               <a key={item} href="#" className="hover:text-bakery-gold transition-all relative group">
                 {item}
@@ -99,13 +98,13 @@ function MainApp() {
           </div>
         </div>
         <div className="flex items-center gap-6">
-          <a href="tel:03120402140" className="hidden md:flex items-center gap-2 text-xs font-bold tracking-widest text-white hover:text-bakery-gold transition-colors">
+          <a href="tel:03120402140" className="hidden md:flex items-center gap-2 text-sm font-bold tracking-widest text-white hover:text-bakery-gold transition-colors">
             <Phone className="w-4 h-4" /> 03120402140
           </a>
 
           <div className="relative text-white">
             <ShoppingBag className="w-6 h-6 cursor-pointer hover:text-bakery-gold transition-colors" />
-            <span className="absolute -top-1 -right-1 w-4 h-4 bg-bakery-gold text-[#1a0033] text-[10px] flex items-center justify-center rounded-full border border-white/20 shadow-lg font-bold">3</span>
+            <span className="absolute -top-1 -right-1 w-5 h-5 bg-bakery-gold text-[#1a0033] text-[11px] flex items-center justify-center rounded-full border border-white/20 shadow-lg font-bold">3</span>
           </div>
         </div>
       </nav>
@@ -150,7 +149,7 @@ function MainApp() {
 
                     <div className="w-16 md:w-24 h-[1px] bg-gradient-to-r from-transparent via-bakery-gold to-transparent mb-6 md:mb-8" />
                     
-                    <span className="uppercase tracking-[0.3em] md:tracking-[0.8em] text-[8px] md:text-[12px] font-bold text-bakery-gold mb-4 block drop-shadow-lg relative z-10 opacity-80">Royal Patisserie • Since 2020</span>
+                    <span className="uppercase tracking-[0.3em] md:tracking-[0.8em] text-[10px] md:text-[14px] font-bold text-bakery-gold mb-4 block drop-shadow-lg relative z-10 opacity-80">Royal Patisserie • Since 2020</span>
                   </motion.div>
 
                   <motion.div
@@ -159,16 +158,16 @@ function MainApp() {
                     transition={{ delay: 1.5, duration: 1 }}
                     className="mt-12 flex flex-wrap items-center justify-center gap-4 lg:gap-6"
                   >
-                    <a href="https://wa.me/923120402140" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto px-8 py-4 border border-[#25D366]/40 bg-[#25D366]/5 hover:bg-[#25D366]/10 backdrop-blur-md rounded-full font-bold tracking-widest uppercase text-[10px] text-[#25D366] transition-all shadow-xl flex items-center justify-center gap-2">
-                      <Phone className="w-4 h-4" /> Contact
+                    <a href="https://wa.me/923120402140" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto px-10 py-5 border border-[#25D366]/40 bg-[#25D366]/5 hover:bg-[#25D366]/10 backdrop-blur-md rounded-full font-bold tracking-widest uppercase text-xs text-[#25D366] transition-all shadow-xl flex items-center justify-center gap-2">
+                      <Phone className="w-5 h-5" /> Contact
                     </a>
 
-                    <a href="https://instagram.com/cake_sahib" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto px-8 py-4 border border-white/20 hover:bg-white/5 backdrop-blur-md rounded-full font-bold tracking-widest uppercase text-[10px] text-white transition-all shadow-xl flex items-center justify-center gap-2">
-                      <Instagram className="w-4 h-4" /> Instagram
+                    <a href="https://instagram.com/cake_sahib" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto px-10 py-5 border border-white/20 hover:bg-white/5 backdrop-blur-md rounded-full font-bold tracking-widest uppercase text-xs text-white transition-all shadow-xl flex items-center justify-center gap-2">
+                       <Instagram className="w-5 h-5" /> Instagram
                     </a>
 
-                    <div className="w-full sm:w-auto px-8 py-4 border border-bakery-gold/20 bg-bakery-gold/5 backdrop-blur-md rounded-full font-bold tracking-widest uppercase text-[10px] text-bakery-gold shadow-xl flex items-center justify-center gap-2">
-                      <Phone className="w-4 h-4 opacity-50" /> +92 312 0402140
+                    <div className="w-full sm:w-auto px-10 py-5 border border-bakery-gold/20 bg-bakery-gold/5 backdrop-blur-md rounded-full font-bold tracking-widest uppercase text-xs text-bakery-gold shadow-xl flex items-center justify-center gap-2">
+                      <Phone className="w-5 h-5 opacity-50" /> +92 312 0402140
                     </div>
                   </motion.div>
                 </div>
@@ -242,16 +241,16 @@ function MainApp() {
                             <img src={item.image} alt={item.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                           </div>
                           <div className="space-y-1">
-                            <span className="text-[10px] font-bold text-white/20 block mb-1">Item {String(idx + 1).padStart(2, '0')}</span>
-                            <p className="text-[9px] text-bakery-gold/50 italic">{item.urdu}</p>
-                            <h4 className="text-sm md:text-lg font-serif text-white group-hover:text-bakery-gold transition-colors">{item.name}</h4>
+                            <span className="text-xs font-bold text-white/20 block mb-1">Item {String(idx + 1).padStart(2, '0')}</span>
+                            <p className="text-[11px] text-bakery-gold/50 italic">{item.urdu}</p>
+                            <h4 className="text-base md:text-xl font-serif text-white group-hover:text-bakery-gold transition-colors">{item.name}</h4>
                           </div>
-                          <p className="mt-2 text-bakery-gold font-light tracking-widest text-xs md:text-sm">Rs. {item.price}</p>
+                          <p className="mt-2 text-bakery-gold font-light tracking-widest text-sm md:text-base">Rs. {item.price}</p>
                           <a 
                             href={`https://wa.me/923120402140?text=${encodeURIComponent(`Hello! I would like to order the ${item.name} (${item.urdu}) from your menu.`)}`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="mt-3 text-[8px] font-bold text-white uppercase tracking-[0.2em] hover:text-bakery-gold transition-colors"
+                            className="mt-3 text-[10px] font-bold text-white uppercase tracking-[0.2em] hover:text-bakery-gold transition-colors"
                           >
                             Order Now
                           </a>
@@ -276,17 +275,17 @@ function MainApp() {
                     <div className="absolute inset-0 bg-gradient-to-r from-[#0c001a] via-[#0c001a]/60 to-transparent" />
                     
                     <div className="relative z-10 p-12 md:p-24 max-w-2xl">
-                      <span className="text-bakery-gold uppercase tracking-[0.5em] text-[10px] font-bold mb-6 block">Order via WhatsApp</span>
+                      <span className="text-bakery-gold uppercase tracking-[0.5em] text-[12px] font-bold mb-6 block">Order via WhatsApp</span>
                       <h3 className="text-4xl md:text-6xl font-serif text-white mb-8 leading-tight italic">
                         "ہماری میٹھاس، <br />آپ کی خوشیاں"
                       </h3>
                       <a 
                         href="https://wa.me/923120402140" 
                         target="_blank" 
-                        className="inline-flex items-center gap-4 px-12 py-5 bg-[#25D366] hover:bg-white hover:text-[#25D366] rounded-full text-[10px] font-bold uppercase tracking-widest transition-all shadow-xl group"
+                        className="inline-flex items-center gap-4 px-12 py-5 bg-[#25D366] hover:bg-white hover:text-[#25D366] rounded-full text-xs font-bold uppercase tracking-widest transition-all shadow-xl group"
                       >
                         Connect Now 
-                        <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                        <ChevronRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                       </a>
                     </div>
                   </motion.div>
@@ -304,11 +303,11 @@ function MainApp() {
             <div className="md:col-span-2 space-y-8">
               <div className="flex flex-col">
                 <span className="text-4xl font-serif text-bakery-gold font-bold tracking-tight mb-2">Cake Sahib</span>
-                <span className="text-[10px] text-bakery-gold tracking-[0.5em] font-bold uppercase mb-1">Established 2020</span>
+                <span className="text-[12px] text-bakery-gold tracking-[0.5em] font-bold uppercase mb-1">Established 2020</span>
                 <div className="h-[1px] w-12 bg-bakery-gold/40 mb-3" />
-                <p className="text-white/60 text-xs font-light tracking-widest uppercase">The Royal Art of Confectionery</p>
+                <p className="text-white/60 text-sm font-light tracking-widest uppercase">The Royal Art of Confectionery</p>
               </div>
-              <p className="text-white/40 font-light leading-relaxed max-w-sm text-sm">
+              <p className="text-white/40 font-light leading-relaxed max-w-sm text-base">
                 Crafting royal delicacies since 2020. Every creation is a masterpiece designed to elevate your celebrations with timeless taste.
               </p>
               <div className="flex gap-4">
@@ -319,8 +318,8 @@ function MainApp() {
             </div>
 
             <div className="space-y-6">
-              <h5 className="text-[10px] font-bold uppercase tracking-widest text-bakery-gold">Quick Links</h5>
-              <ul className="space-y-4 text-sm text-white/50 font-light">
+              <h5 className="text-[13px] font-bold uppercase tracking-widest text-bakery-gold">Quick Links</h5>
+              <ul className="space-y-4 text-base text-white/50 font-light">
                 <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
                 <li><a href="#menu" className="hover:text-white transition-colors">Menu</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
@@ -329,8 +328,8 @@ function MainApp() {
             </div>
 
             <div className="space-y-6">
-              <h5 className="text-[10px] font-bold uppercase tracking-widest text-bakery-gold">Boutique Info</h5>
-              <ul className="space-y-4 text-sm text-white/50 font-light">
+              <h5 className="text-[13px] font-bold uppercase tracking-widest text-bakery-gold">Boutique Info</h5>
+              <ul className="space-y-4 text-base text-white/50 font-light">
                 <li className="flex items-center gap-3"><MapPin className="w-4 h-4 text-bakery-gold" /> Rahim Yar Khan, Pakistan</li>
                 <li className="flex items-center gap-3"><Phone className="w-4 h-4 text-bakery-gold" /> 03120402140</li>
                 <li className="flex items-center gap-3"><Clock className="w-4 h-4 text-bakery-gold" /> 10:00 AM - 10:00 PM</li>
@@ -338,9 +337,9 @@ function MainApp() {
             </div>
           </div>
           
-          <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-[9px] tracking-[0.4em] uppercase opacity-30">
+          <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-[11px] tracking-[0.4em] uppercase opacity-30">
             <p>© 2026 Cake Sahib Artisanal Group. All Rights Reserved.</p>
-            <div className="flex gap-12 font-bold italic text-bakery-gold text-center">
+            <div className="flex gap-12 font-bold italic text-bakery-gold text-center text-sm">
               Handcrafted with Love
             </div>
           </div>
