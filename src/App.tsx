@@ -186,7 +186,7 @@ function MainApp() {
 
                     <div className="w-16 md:w-24 h-[1px] bg-gradient-to-r from-transparent via-bakery-gold to-transparent mb-6 md:mb-8" />
                     
-                    <span className="uppercase tracking-[0.3em] md:tracking-[0.8em] text-sm md:text-2xl font-bold text-bakery-gold mb-4 block drop-shadow-lg relative z-10 opacity-80">Royal Patisserie • Since 2020</span>
+                    <span className="uppercase tracking-[0.3em] md:tracking-[0.8em] text-sm md:text-2xl font-bold text-bakery-gold mb-4 block drop-shadow-lg relative z-10 opacity-80">Royal BAKERS • Since 2020</span>
                   </motion.div>
 
                   <motion.div
