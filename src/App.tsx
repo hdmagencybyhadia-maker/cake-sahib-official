@@ -15,6 +15,7 @@ import pineappleCakeImg from './assets/images/regenerated_image_1778268730196.jp
 import rusticPineappleCakeImg from './assets/images/regenerated_image_1778274411431.jpg';
 import rusticChocolateCakeImg from './assets/images/regenerated_image_1778271393772.jpg';
 import freshDonutImg from './assets/images/regenerated_image_1778274801132.jpg';
+import experienceImg from './assets/images/regenerated_image_1778421341085.png';
 
 const VIDEOS = {
   hero: "https://assets.mixkit.co/videos/preview/mixkit-freshly-baked-bread-in-a-bakery-4100-large.mp4",
@@ -232,8 +233,14 @@ function MainApp() {
                       </p>
                     </div>
                     <div className="lg:w-1/2 relative">
-                       <div className="relative aspect-square rounded-[3rem] overflow-hidden shadow-2xl bg-bakery-gold/5">
-                         {/* Image or Video removed as per request */}
+                       <div className="relative aspect-square rounded-[3rem] overflow-hidden shadow-2xl bg-bakery-gold/5 group">
+                         <img 
+                           src={experienceImg} 
+                           alt="Experience the Craft" 
+                           className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                           referrerPolicy="no-referrer"
+                         />
+                         <div className="absolute inset-0 bg-gradient-to-t from-[#1a0033]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                        </div>
                     </div>
                   </div>
@@ -264,28 +271,28 @@ function MainApp() {
                       <div className="w-16 h-[1px] bg-bakery-gold/30 mx-auto mt-6" />
                     </header>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-10 gap-x-6 md:gap-y-12 md:gap-x-8 max-w-5xl mx-auto">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-8 gap-x-6 md:gap-y-12 md:gap-x-8 max-w-5xl mx-auto">
                       {filteredProducts.map((item, idx) => (
                         <motion.div
                           key={item.id}
                           initial={{ opacity: 0, y: 10 }}
                           whileInView={{ opacity: 1, y: 0 }}
                           viewport={{ once: true }}
-                          className="flex flex-col items-center text-center group bg-white/2 p-6 rounded-[2rem] border border-white/5 hover:border-bakery-gold/20 transition-all"
+                          className="flex flex-col items-center text-center group bg-white/2 p-4 md:p-6 rounded-3xl border border-white/5 hover:border-bakery-gold/20 transition-all"
                         >
-                          <div className="relative w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden mb-6 border border-white/10 group-hover:border-bakery-gold/50 transition-colors bg-white/5">
+                          <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden mb-4 md:mb-6 border border-white/10 group-hover:border-bakery-gold/50 transition-colors bg-white/5">
                             <img src={item.image} alt={item.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                           </div>
-                          <div className="space-y-2">
-                            <p className="text-xs text-bakery-gold/50 italic font-medium">{item.urdu}</p>
-                            <h4 className="text-lg md:text-2xl font-serif text-white group-hover:text-bakery-gold transition-colors leading-tight">{item.name}</h4>
+                          <div className="space-y-1 md:space-y-2">
+                            <p className="text-[10px] md:text-xs text-bakery-gold/50 italic font-medium">{item.urdu}</p>
+                            <h4 className="text-base md:text-2xl font-serif text-white group-hover:text-bakery-gold transition-colors leading-tight">{item.name}</h4>
                           </div>
-                          <p className="mt-3 text-bakery-gold font-light tracking-widest text-base md:text-lg">Rs. {item.price}<span className="text-[10px] opacity-50 ml-1">{item.unit}</span></p>
+                          <p className="mt-2 md:mt-3 text-bakery-gold font-light tracking-widest text-sm md:text-lg">Rs. {item.price}<span className="text-[10px] opacity-50 ml-1">{item.unit}</span></p>
                           <a 
                             href={`https://wa.me/923120402140?text=${encodeURIComponent(`Hello! I would like to order the ${item.name} (${item.urdu}) from your menu.`)}`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="mt-4 px-6 py-2 border border-bakery-gold/30 rounded-full text-[10px] font-bold text-white uppercase tracking-[0.2em] hover:bg-bakery-gold hover:text-[#1a0033] transition-all"
+                            className="mt-3 md:mt-4 px-5 py-2 md:px-6 md:py-2 border border-bakery-gold/30 rounded-full text-[9px] md:text-[10px] font-bold text-white uppercase tracking-[0.2em] hover:bg-bakery-gold hover:text-[#1a0033] transition-all"
                           >
                             Order Now
                           </a>
