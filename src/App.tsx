@@ -224,16 +224,16 @@ function MainApp() {
               <section className="py-20 md:py-32 bg-[#1a0033]">
                 <div className="container mx-auto px-6">
                   <div className="flex flex-col lg:flex-row gap-20 items-center">
-                    <div className="lg:w-1/2 space-y-10">
-                      <header className="space-y-4">
-                        <span className="text-bakery-gold uppercase tracking-[0.5em] text-[10px] font-bold">The Craft</span>
-                        <h3 className="text-5xl md:text-7xl font-serif text-white tracking-tight leading-[0.9]">Beyond <br /><span className="italic font-light text-pink-300">Confectionery</span></h3>
+                    <div className="lg:w-1/2 space-y-8 flex flex-col items-center lg:items-start">
+                      <header className="space-y-4 flex flex-col items-center lg:items-start">
+                        <span className="text-bakery-gold uppercase tracking-[0.5em] text-[9px] font-bold">The Craft</span>
+                        <h3 className="text-4xl md:text-6xl font-serif text-white tracking-tight leading-[0.9] text-center lg:text-left">Beyond <br /><span className="italic font-light text-pink-300">Confectionery</span></h3>
                       </header>
-                      <p className="text-xl md:text-2xl text-white/70 font-light leading-relaxed max-w-lg">
-                        At Cake Sahib, we believe that a cake is not just a dessert; it is the center of your celebration. Every layer is baked with precision, every frosting applied with passion, and every detail customized to tell your unique story.
+                      <p className="text-[12px] md:text-lg text-white/70 font-light leading-relaxed max-w-md text-center lg:text-left">
+                        We bake every layer with<br /> passion and precision,<br /> creating customized royal cakes<br /> for your unique celebrations.
                       </p>
                     </div>
-                    <div className="lg:w-1/2 relative">
+                    <div className="lg:w-1/2 relative max-w-[260px] sm:max-w-md lg:max-w-none mx-auto lg:mx-0">
                        <div className="relative aspect-square rounded-full overflow-hidden shadow-2xl bg-bakery-gold/5 group">
                          <img 
                            src={experienceImg} 
@@ -251,11 +251,11 @@ function MainApp() {
               {/* Visionary Section */}
               <section className="py-32 bg-[#0c001a] relative overflow-hidden">
                 <div className="container mx-auto px-6 relative z-10">
-                  <div className="max-w-3xl mx-auto text-center space-y-8">
-                    <span className="text-bakery-gold uppercase tracking-[0.5em] text-[10px] font-bold">Our Legacy</span>
-                    <h3 className="text-4xl md:text-6xl font-serif text-white">The Heart of <span className="italic font-light text-bakery-gold text-5xl md:text-7xl">Cake Sahib</span></h3>
-                    <p className="text-white/70 text-xl md:text-2xl font-light leading-relaxed">
-                      Our journey began over three decades ago with a simple mission: to transform the finest ingredients into royal masterpieces.
+                  <div className="max-w-3xl mx-auto text-center space-y-6">
+                    <span className="text-bakery-gold uppercase tracking-[0.5em] text-[8px] md:text-[10px] font-bold">Our Legacy</span>
+                    <h3 className="text-3xl md:text-6xl font-serif text-white">The Heart of <span className="italic font-light text-bakery-gold text-4xl md:text-7xl">Cake Sahib</span></h3>
+                    <p className="text-white/70 text-[13px] md:text-2xl font-light leading-relaxed px-4 mx-auto max-w-2xl">
+                      Our journey began over<br /> three decades ago with<br /> a simple mission: to transform<br /> the finest ingredients<br /> into royal masterpieces.
                     </p>
                   </div>
                 </div>
@@ -315,20 +315,20 @@ function MainApp() {
                     <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
                       <source src={VIDEOS.pricing} type="video/mp4" />
                     </video>
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#0c001a] via-[#0c001a]/60 to-transparent" />
+                    <div className="absolute inset-0 bg-[#0c001a]/40 backdrop-blur-[2px]" />
                     
-                    <div className="relative z-10 p-8 md:p-24 max-w-2xl">
-                      <span className="text-bakery-gold uppercase tracking-[0.5em] text-[10px] md:text-[12px] font-bold mb-4 md:mb-6 block">Order via WhatsApp</span>
-                      <h3 className="text-3xl md:text-6xl font-serif text-white mb-6 md:mb-8 leading-tight italic">
+                    <div className="relative z-10 p-6 md:p-24 max-w-2xl mx-auto text-center flex flex-col items-center">
+                      <span className="text-bakery-gold uppercase tracking-[0.4em] md:tracking-[0.5em] text-[9px] md:text-[12px] font-bold mb-3 md:mb-6 block">Order via WhatsApp</span>
+                      <h3 className="text-2xl md:text-6xl font-serif text-white mb-6 md:mb-8 leading-tight italic">
                         "ہماری میٹھاس، <br />آپ کی خوشیاں"
                       </h3>
                       <a 
                         href="https://wa.me/923120402140" 
                         target="_blank" 
-                        className="inline-flex items-center gap-3 px-8 py-4 md:px-12 md:py-5 bg-[#25D366] hover:bg-white hover:text-[#25D366] rounded-full text-[10px] md:text-xs font-bold uppercase tracking-widest transition-all shadow-xl group"
+                        className="inline-flex items-center gap-2 md:gap-3 px-6 py-3 md:px-12 md:py-5 bg-[#25D366] hover:bg-white hover:text-[#25D366] rounded-full text-[9px] md:text-xs font-bold uppercase tracking-widest transition-all shadow-xl group"
                       >
                         Connect Now 
-                        <ChevronRight className="w-4 h-4 md:w-5 md:h-5 transition-transform group-hover:translate-x-1" />
+                        <ChevronRight className="w-3.5 h-3.5 md:w-5 md:h-5 transition-transform group-hover:translate-x-1" />
                       </a>
                     </div>
                   </motion.div>
