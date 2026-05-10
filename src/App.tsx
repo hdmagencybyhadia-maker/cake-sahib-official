@@ -188,7 +188,8 @@ function MainApp() {
 
                     <div className="w-12 md:w-24 h-[1px] bg-gradient-to-r from-transparent via-bakery-gold to-transparent mb-6 md:mb-8" />
                     
-                    <span className="uppercase tracking-[0.2em] md:tracking-[0.8em] text-[10px] md:text-2xl font-bold text-bakery-gold mb-4 block drop-shadow-lg relative z-10 opacity-80">Royal BAKERS • Since 2020</span>
+                    <span className="uppercase tracking-[0.2em] md:tracking-[0.8em] text-[10px] md:text-2xl font-bold text-bakery-gold mb-2 md:mb-4 block drop-shadow-lg relative z-10 opacity-80">HOME BAKERS • Since 2020</span>
+                    <span className="text-white/60 text-[8px] md:text-sm tracking-widest uppercase block relative z-10 italic">Please place your order at least 2 days in advance</span>
                   </motion.div>
 
                   <motion.div
@@ -233,7 +234,7 @@ function MainApp() {
                       </p>
                     </div>
                     <div className="lg:w-1/2 relative">
-                       <div className="relative aspect-square rounded-[3rem] overflow-hidden shadow-2xl bg-bakery-gold/5 group">
+                       <div className="relative aspect-square rounded-full overflow-hidden shadow-2xl bg-bakery-gold/5 group">
                          <img 
                            src={experienceImg} 
                            alt="Experience the Craft" 
