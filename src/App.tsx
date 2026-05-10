@@ -134,7 +134,7 @@ function MainApp() {
           <Route path="/" element={
             <div className="page-wrapper">
               {/* Hero Section */}
-              <section className="relative h-screen w-full overflow-hidden flex items-center justify-center">
+              <section className="relative min-h-screen w-full overflow-hidden flex items-center justify-center py-24">
                 <div className="absolute inset-0 z-0">
                   <video 
                     autoPlay 
@@ -221,7 +221,7 @@ function MainApp() {
               </section>
 
               {/* Experience Section */}
-              <section className="py-16 bg-[#1a0033]">
+              <section className="py-20 md:py-32 bg-[#1a0033]">
                 <div className="container mx-auto px-6">
                   <div className="flex flex-col lg:flex-row gap-20 items-center">
                     <div className="lg:w-1/2 space-y-10">
