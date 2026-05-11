@@ -16,6 +16,8 @@ import rusticPineappleCakeImg from './assets/images/regenerated_image_1778274411
 import rusticChocolateCakeImg from './assets/images/regenerated_image_1778271393772.jpg';
 import freshDonutImg from './assets/images/regenerated_image_1778274801132.jpg';
 import experienceImg from './assets/images/regenerated_image_1778421341085.png';
+import vanillaCakeImg from './assets/images/regenerated_image_1778436603076.jpg';
+import fruitCakeImg from './assets/images/regenerated_image_1778437001047.jpg';
 
 const VIDEOS = {
   hero: "https://assets.mixkit.co/videos/preview/mixkit-freshly-baked-bread-in-a-bakery-4100-large.mp4",
@@ -35,6 +37,8 @@ const PRICE_LIST = [
   { id: 9, category: "Menu", name: "Rustic Sliced tea cake (Pineapple)", price: "750", unit: "/ lb", urdu: "رسٹک سلائسڈ ٹی کیک (پائن ایپل)", image: rusticPineappleCakeImg },
   { id: 8, category: "Menu", name: "Rustic Sliced tea cake (Chocolate)", price: "750", unit: "/ lb", urdu: "رسٹک سلائسڈ ٹی کیک (چاکلیٹ)", image: rusticChocolateCakeImg },
   { id: 3, category: "Menu", name: "Fresh Donut", price: "150", unit: "", urdu: "تازہ ڈونٹس", image: freshDonutImg },
+  { id: 15, category: "Menu", name: "Vanilla Cake", price: "750", unit: "/ lb", urdu: "ونیلا کیک", image: vanillaCakeImg },
+  { id: 16, category: "Menu", name: "Fruit Cake", price: "500", unit: "/ lb", urdu: "فروٹ کیک", image: fruitCakeImg },
   { id: 14, category: "Menu", name: "Cookies", price: "1000", unit: "/ kg", urdu: "کوکیز", image: "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&q=80&w=800" }
 ];
 
@@ -83,7 +87,7 @@ function MainApp() {
   }, []);
 
   return (
-    <div className="w-full max-w-full overflow-x-hidden min-h-screen bg-[#1a0033] selection:bg-bakery-gold selection:text-white flex flex-col items-center">
+    <div className="w-full m-0 p-0 overflow-x-hidden min-h-screen bg-[#1a0033] selection:bg-bakery-gold selection:text-white flex flex-col items-center">
       {/* Navigation */}
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 px-4 md:px-6 py-4 flex items-center justify-between ${scrolled ? 'bg-[#1a0033]/90 backdrop-blur-xl shadow-lg border-b border-white/5' : 'bg-transparent text-white'}`}>
         <div className="flex items-center gap-8">
@@ -109,7 +113,7 @@ function MainApp() {
             </div>
           </Link>
           <div className="hidden lg:flex gap-8 font-bold text-base tracking-[0.2em] uppercase text-white/60">
-            {['Collections', 'Atelier', 'Our Story', 'Boutique', 'Journal'].map(item => (
+            {['Collections', 'Menu', 'Our Story', 'Boutique', 'Journal'].map(item => (
               <a key={item} href="#" className="hover:text-bakery-gold transition-all relative group">
                 {item}
                 <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-bakery-gold transition-all group-hover:w-full"></span>
@@ -221,9 +225,10 @@ function MainApp() {
               </section>
 
               {/* Experience Section */}
-              <section className="py-20 md:py-32 bg-[#1a0033]">
-                <div className="container mx-auto px-6">
-                  <div className="flex flex-col lg:flex-row gap-20 items-center">
+              <section className="py-20 md:py-32 bg-[#1a0033] w-full">
+                <div className="w-full px-5 md:px-10 lg:px-20 flex flex-col items-center">
+                  <div className="w-full max-w-6xl">
+                    <div className="flex flex-col lg:flex-row gap-20 items-center">
                     <div className="lg:w-1/2 space-y-8 flex flex-col items-center lg:items-start">
                       <header className="space-y-4 flex flex-col items-center lg:items-start">
                         <span className="text-bakery-gold uppercase tracking-[0.5em] text-[9px] font-bold">The Craft</span>
@@ -233,8 +238,8 @@ function MainApp() {
                         We bake every layer with<br /> passion and precision,<br /> creating customized royal cakes<br /> for your unique celebrations.
                       </p>
                     </div>
-                    <div className="lg:w-1/2 relative max-w-[260px] sm:max-w-md lg:max-w-none mx-auto lg:mx-0">
-                       <div className="relative aspect-square rounded-full overflow-hidden shadow-2xl bg-bakery-gold/5 group">
+                    <div className="lg:w-1/2 relative max-w-[300px] sm:max-w-md lg:max-w-none mx-auto lg:mx-0">
+                       <div className="relative aspect-square rounded-full overflow-hidden shadow-2xl bg-bakery-gold/5 group border-4 border-white/5">
                          <img 
                            src={experienceImg} 
                            alt="Experience the Craft" 
@@ -246,12 +251,13 @@ function MainApp() {
                     </div>
                   </div>
                 </div>
+              </div>
               </section>
 
               {/* Visionary Section */}
-              <section className="py-32 bg-[#0c001a] relative overflow-hidden">
-                <div className="container mx-auto px-6 relative z-10">
-                  <div className="max-w-3xl mx-auto text-center space-y-6">
+              <section className="py-32 bg-[#0c001a] relative overflow-hidden w-full">
+                <div className="w-full px-5 md:px-10 lg:px-20 relative z-10 flex flex-col items-center">
+                  <div className="max-w-3xl text-center space-y-6">
                     <span className="text-bakery-gold uppercase tracking-[0.5em] text-[8px] md:text-[10px] font-bold">Our Legacy</span>
                     <h3 className="text-3xl md:text-6xl font-serif text-white">The Heart of <span className="italic font-light text-bakery-gold text-4xl md:text-7xl">Cake Sahib</span></h3>
                     <p className="text-white/70 text-[13px] md:text-2xl font-light leading-relaxed px-4 mx-auto max-w-2xl">
@@ -262,55 +268,124 @@ function MainApp() {
               </section>
 
               {/* Menu Section (Re-integrated) */}
-              <section id="menu" className="py-16 md:py-40 bg-[#0c001a] relative overflow-hidden">
-                <div className="absolute top-1/4 left-0 w-[40rem] h-[40rem] bg-purple-900/10 rounded-full blur-[120px] -translate-x-1/2" />
-                <div className="container mx-auto px-4 sm:px-6 relative z-10">
-                  <div className="max-w-6xl mx-auto">
-                    <header className="mb-12 md:mb-20 text-center space-y-4">
-                      <span className="text-bakery-gold uppercase tracking-[0.6em] text-[10px] font-bold">Menu Collection</span>
-                      <h3 className="text-4xl md:text-7xl font-serif text-white tracking-tight">Our <span className="italic text-bakery-gold/80 font-light">Menu</span></h3>
-                      <div className="w-16 h-[1px] bg-bakery-gold/30 mx-auto mt-6" />
+              {/* Menu Section - Reimagined with Luxury Grid */}
+              <section id="menu" className="py-24 md:py-48 bg-[#0c001a] relative overflow-hidden w-full">
+                {/* Modern Background Accents - Scaled for Mobile */}
+                <div className="absolute -top-12 -right-12 md:-top-24 md:-right-24 w-[20rem] h-[20rem] md:w-[50rem] md:h-[50rem] bg-pink-900/10 rounded-full blur-[80px] md:blur-[140px] opacity-30" />
+                <div className="absolute -bottom-24 -left-24 md:-bottom-48 md:-left-48 w-[15rem] h-[15rem] md:w-[40rem] md:h-[40rem] bg-bakery-gold/10 rounded-full blur-[60px] md:blur-[120px] opacity-20" />
+                
+                <div className="w-full px-4 md:px-10 lg:px-20 relative z-10 flex flex-col items-center">
+                  <div className="w-full max-w-7xl">
+                    <header className="mb-20 md:mb-32 text-center relative">
+                      <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="inline-block"
+                      >
+                        <span className="text-bakery-gold uppercase tracking-[0.8em] text-[10px] md:text-xs font-bold mb-4 block">Gourmet Selection</span>
+                        <h3 className="text-5xl md:text-9xl font-serif text-white tracking-tighter relative z-10">
+                          The <span className="italic text-bakery-gold font-light">Cake Collection</span>
+                        </h3>
+                        <div className="w-24 h-[1px] bg-bakery-gold/30 mx-auto mt-8 flex items-center justify-center">
+                          <Crown className="w-3 h-3 text-bakery-gold -mt-[1.5px]" />
+                        </div>
+                      </motion.div>
+                      
+                      {/* Decorative text scaled to fit mobile */}
+                      <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[4rem] sm:text-[10rem] md:text-[20rem] font-serif text-white/[0.02] select-none pointer-events-none uppercase tracking-widest whitespace-nowrap">
+                        Excellence
+                      </span>
                     </header>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-8 gap-x-6 md:gap-y-12 md:gap-x-8 max-w-5xl mx-auto">
-                      {filteredProducts.map((item, idx) => (
-                        <motion.div
-                          key={item.id}
-                          initial={{ opacity: 0, y: 10 }}
-                          whileInView={{ opacity: 1, y: 0 }}
-                          viewport={{ once: true }}
-                          className="flex flex-col items-center text-center group bg-white/2 p-4 md:p-6 rounded-3xl border border-white/5 hover:border-bakery-gold/20 transition-all"
-                        >
-                          <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden mb-4 md:mb-6 border border-white/10 group-hover:border-bakery-gold/50 transition-colors bg-white/5">
-                            <img src={item.image} alt={item.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                          </div>
-                          <div className="space-y-1 md:space-y-2">
-                            <p className="text-[10px] md:text-xs text-bakery-gold/50 italic font-medium">{item.urdu}</p>
-                            <h4 className="text-base md:text-2xl font-serif text-white group-hover:text-bakery-gold transition-colors leading-tight">{item.name}</h4>
-                          </div>
-                          <p className="mt-2 md:mt-3 text-bakery-gold font-light tracking-widest text-sm md:text-lg">Rs. {item.price}<span className="text-[10px] opacity-50 ml-1">{item.unit}</span></p>
-                          <a 
-                            href={`https://wa.me/923120402140?text=${encodeURIComponent(`Hello! I would like to order the ${item.name} (${item.urdu}) from your menu.`)}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="mt-3 md:mt-4 px-5 py-2 md:px-6 md:py-2 border border-bakery-gold/30 rounded-full text-[9px] md:text-[10px] font-bold text-white uppercase tracking-[0.2em] hover:bg-bakery-gold hover:text-[#1a0033] transition-all"
-                          >
-                            Order Now
-                          </a>
-                        </motion.div>
-                      ))}
+                    <div className="w-full max-w-6xl mx-auto">
+                      {/* Stylized Outer Container "Box" */}
+                      <div className="bg-white/[0.02] border border-white/10 rounded-[1.5rem] md:rounded-[3rem] p-3 md:p-10 backdrop-blur-xl relative shadow-2xl overflow-hidden mb-12 w-full">
+                        <div className="absolute inset-0 bg-gradient-to-br from-bakery-gold/5 via-transparent to-purple-900/5 pointer-events-none" />
+                        
+                        <div className="relative z-10 flex flex-col space-y-4 md:space-y-6 w-full items-center">
+                          {filteredProducts.map((item, idx) => (
+                            <motion.div
+                              key={item.id}
+                              initial={{ opacity: 0, y: 20 }}
+                              whileInView={{ opacity: 1, y: 0 }}
+                              viewport={{ once: true }}
+                              transition={{ delay: idx * 0.05, duration: 0.6 }}
+                              className="group relative w-full flex justify-center"
+                            >
+                              <a 
+                                href={`https://wa.me/923120402140?text=${encodeURIComponent(`Hello! I would like to order the ${item.name} (${item.urdu}) from your menu.`)}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex flex-col items-center gap-4 md:gap-6 bg-white/[0.03] border border-white/5 hover:border-bakery-gold/40 rounded-[1.5rem] md:rounded-[2.5rem] p-5 md:p-8 transition-all duration-500 w-[95%] md:w-full max-w-[320px] md:max-w-none text-center relative backdrop-blur-sm group-hover:bg-bakery-gold/[0.05] overflow-hidden"
+                              >
+                                {/* Glow effect inside individual item box */}
+                                <div className="absolute inset-0 bg-gradient-to-b from-bakery-gold/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                                
+                                {/* Product Image - Centered on top */}
+                                <div className="relative w-24 h-24 md:w-40 md:h-40 rounded-full md:rounded-[2rem] overflow-hidden shadow-2xl border border-white/10 group-hover:border-bakery-gold/30 transition-all duration-700">
+                                  <img 
+                                    src={item.image} 
+                                    alt={item.name} 
+                                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
+                                  />
+                                </div>
+
+                                {/* Product Content - Below image */}
+                                <div className="flex flex-col items-center space-y-2 md:space-y-4 relative z-10 w-full">
+                                  <div className="flex flex-col items-center justify-center w-full">
+                                    <h4 className="text-lg md:text-3xl font-serif text-white group-hover:text-bakery-gold transition-colors leading-tight">
+                                      {item.name}
+                                    </h4>
+                                    <p className="text-[10px] md:text-base text-white/40 italic font-medium tracking-wide mt-1">
+                                      {item.urdu}
+                                    </p>
+                                  </div>
+                                  
+                                  <div className="h-[1px] w-16 md:w-32 bg-gradient-to-r from-transparent via-bakery-gold/30 to-transparent" />
+                                  
+                                  <div className="flex flex-col items-center gap-1">
+                                    <div className="text-bakery-gold font-bold text-xl md:text-4xl tracking-tighter">
+                                      Rs.{item.price}
+                                    </div>
+                                    <div className="text-[8px] md:text-sm text-white/20 uppercase tracking-[0.2em] font-light">
+                                      per {item.unit || "item"}
+                                    </div>
+                                  </div>
+
+                                  <div className="flex items-center justify-center gap-3 md:gap-6 text-[8px] md:text-xs text-white/40 font-medium pt-2">
+                                    <span className="flex items-center gap-1.5">
+                                      <div className="w-1 h-1 rounded-full bg-bakery-gold" />
+                                      Fresh
+                                    </span>
+                                    <span className="flex items-center gap-1.5">
+                                      <div className="w-1 h-1 rounded-full bg-bakery-gold" />
+                                      Premium
+                                    </span>
+                                  </div>
+                                </div>
+
+                                {/* Action Icon */}
+                                <div className="absolute right-4 bottom-4 opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0 hidden md:block">
+                                  <ChevronRight className="w-6 h-6 text-bakery-gold/50" />
+                                </div>
+                              </a>
+                            </motion.div>
+                          ))}
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </section>
 
               {/* Order Section */}
-              <section className="py-32 bg-[#0c001a]">
-                <div className="container mx-auto px-6">
+              <section className="py-32 bg-[#0c001a] w-full">
+                <div className="w-full px-5 md:px-10 lg:px-20 flex flex-col items-center">
                   <motion.div 
                     initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
-                    className="relative rounded-[4rem] overflow-hidden aspect-[21/9] min-h-[400px] shadow-2xl flex items-center"
+                    className="relative rounded-[2rem] md:rounded-[4rem] overflow-hidden aspect-video md:aspect-[21/9] min-h-[300px] md:min-h-[400px] shadow-2xl flex items-center"
                   >
                     <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
                       <source src={VIDEOS.pricing} type="video/mp4" />
@@ -340,9 +415,10 @@ function MainApp() {
       </AnimatePresence>
 
       {/* Premium Footer */}
-      <footer className="py-24 bg-[#080015] text-white border-t border-white/5">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
+      <footer className="py-24 bg-[#080015] text-white border-t border-white/5 w-full">
+        <div className="w-full px-5 md:px-10 lg:px-20 flex flex-col items-center">
+          <div className="w-full max-w-6xl">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
             <div className="md:col-span-2 space-y-8">
               <div className="flex flex-col">
                 <span className="text-4xl font-serif text-bakery-gold font-bold tracking-tight mb-2">Cake Sahib</span>
@@ -387,6 +463,7 @@ function MainApp() {
             </div>
           </div>
         </div>
+      </div>
       </footer>
     </div>
   );
