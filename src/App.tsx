@@ -193,7 +193,7 @@ function MainApp() {
                     <div className="w-12 md:w-24 h-[1px] bg-gradient-to-r from-transparent via-bakery-gold to-transparent mb-6 md:mb-8" />
                     
                     <span className="uppercase tracking-[0.2em] md:tracking-[0.8em] text-[10px] md:text-2xl font-bold text-bakery-gold mb-2 md:mb-4 block drop-shadow-lg relative z-10 opacity-80">HOME BAKERS • Since 2020</span>
-                    <span className="text-white/60 text-[8px] md:text-sm tracking-widest uppercase block relative z-10 italic">Please place your order at least 2 days in advance</span>
+                    <span className="text-white/60 text-[7px] md:text-xs tracking-widest uppercase block relative z-10 italic">Please place your order at least 2 days in advance</span>
                   </motion.div>
 
                   <motion.div
@@ -259,7 +259,7 @@ function MainApp() {
                 <div className="w-full px-5 md:px-10 lg:px-20 relative z-10 flex flex-col items-center">
                   <div className="max-w-3xl text-center space-y-6">
                     <span className="text-bakery-gold uppercase tracking-[0.5em] text-[8px] md:text-[10px] font-bold">Our Legacy</span>
-                    <h3 className="text-3xl md:text-6xl font-serif text-white">The Heart of <span className="italic font-light text-bakery-gold text-4xl md:text-7xl">Cake Sahib</span></h3>
+                    <h3 className="text-2xl md:text-5xl font-serif text-white">The Heart of <span className="italic font-light text-bakery-gold text-3xl md:text-6xl">Cake Sahib</span></h3>
                     <p className="text-white/70 text-[13px] md:text-2xl font-light leading-relaxed px-4 mx-auto max-w-2xl">
                       Our journey began over<br /> three decades ago with<br /> a simple mission: to transform<br /> the finest ingredients<br /> into royal masterpieces.
                     </p>
@@ -284,7 +284,7 @@ function MainApp() {
                         className="inline-block"
                       >
                         <span className="text-bakery-gold uppercase tracking-[0.8em] text-[10px] md:text-xs font-bold mb-4 block">Gourmet Selection</span>
-                        <h3 className="text-5xl md:text-9xl font-serif text-white tracking-tighter relative z-10">
+                        <h3 className="text-3xl md:text-7xl font-serif text-white tracking-tighter relative z-10">
                           The <span className="italic text-bakery-gold font-light">Cake Collection</span>
                         </h3>
                         <div className="w-24 h-[1px] bg-bakery-gold/30 mx-auto mt-8 flex items-center justify-center">
