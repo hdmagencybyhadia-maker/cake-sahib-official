@@ -467,11 +467,32 @@ function MainApp() {
             </div>
           </div>
           
-          <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-[11px] tracking-[0.4em] uppercase opacity-30">
-            <p>© 2026 Cake Sahib Artisanal Group. All Rights Reserved.</p>
-            <div className="flex gap-12 font-bold italic text-bakery-gold text-center text-sm">
-              Handcrafted with Love
+          <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-[11px] tracking-[0.4em] uppercase">
+            <div className="opacity-30">
+              <p>© 2026 Cake Sahib Artisanal Group. All Rights Reserved.</p>
             </div>
+            
+            <motion.div 
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="flex flex-col items-center md:items-end gap-3"
+            >
+              <div className="flex flex-col sm:flex-row items-center gap-3 bg-white/[0.03] border border-white/10 rounded-2xl px-6 py-3 backdrop-blur-sm group hover:bg-white/[0.06] transition-all">
+                <div className="flex flex-col items-center sm:items-start">
+                  <span className="text-[8px] text-white/30 tracking-[0.4em] uppercase font-bold mb-0.5">Project Architect</span>
+                  <span className="text-white text-[10px] font-bold tracking-widest uppercase">Designed & Developed by <span className="text-bakery-gold">Muhammad Bin Nadeem</span></span>
+                </div>
+                <a 
+                  href="https://www.instagram.com/c.h_m.u.h.a.m.m.a.d?igsh=Y3Bra2o4ZW5icTgy" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-4 py-2 rounded-full bg-pink-600/10 text-pink-300 border border-pink-600/20 hover:bg-pink-600/20 hover:scale-105 transition-all text-[9px] font-bold uppercase tracking-widest"
+                >
+                  <Instagram className="w-3.5 h-3.5" /> Follow Developer
+                </a>
+              </div>
+            </motion.div>
           </div>
         </div>
       </div>
