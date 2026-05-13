@@ -225,6 +225,8 @@ function MainApp() {
                       <Phone className="w-4 h-4 md:w-6 md:h-6 opacity-50" /> +92 312 0402140
                     </div>
                   </motion.div>
+
+
                 </div>
 
                 <button 
@@ -411,11 +413,31 @@ function MainApp() {
                       <a 
                         href="https://wa.me/923120402140" 
                         target="_blank" 
-                        className="inline-flex items-center gap-2 md:gap-3 px-6 py-3 md:px-12 md:py-5 bg-[#25D366] hover:bg-white hover:text-[#25D366] rounded-full text-[9px] md:text-xs font-bold uppercase tracking-widest transition-all shadow-xl group"
+                        className="inline-flex items-center gap-2 md:gap-3 px-6 py-3 md:px-12 md:py-5 bg-[#25D366] hover:bg-white hover:text-[#25D366] rounded-full text-[9px] md:text-xs font-bold uppercase tracking-widest transition-all shadow-xl group mb-6"
                       >
                         Connect Now 
                         <ChevronRight className="w-3.5 h-3.5 md:w-5 md:h-5 transition-transform group-hover:translate-x-1" />
                       </a>
+
+                      <motion.div 
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        className="flex flex-col items-center gap-2"
+                      >
+                        <div className="flex flex-col sm:flex-row items-center gap-2 bg-black/40 border border-white/10 rounded-xl px-4 py-2 backdrop-blur-sm">
+                          <div className="text-[7px] md:text-[9px] font-bold tracking-[0.2em] uppercase">
+                            Designed & Developed by <span className="text-bakery-gold">Muhammad Bin Nadeem</span>
+                          </div>
+                          <a 
+                            href="https://www.instagram.com/c.h_m.u.h.a.m.m.a.d?igsh=Y3Bra2o4ZW5icTgy" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-1 text-pink-400 hover:text-pink-300 transition-colors text-[7px] md:text-[9px] font-bold uppercase tracking-tight"
+                          >
+                            <Instagram className="w-3 h-3" /> Instagram
+                          </a>
+                        </div>
+                      </motion.div>
                     </div>
                   </motion.div>
                 </div>
