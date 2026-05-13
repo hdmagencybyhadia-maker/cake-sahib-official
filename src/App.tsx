@@ -5,7 +5,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Volume2, VolumeX, Menu, ShoppingBag, Heart, Star, MapPin, Clock, Instagram, Phone, ChevronRight, Crown } from 'lucide-react';
+import { Volume2, VolumeX, Menu, ShoppingBag, Heart, Star, MapPin, Clock, Instagram, Phone, ChevronRight, Crown, Video } from 'lucide-react';
 import { HashRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
 
 // Cinematic Assets
@@ -18,6 +18,7 @@ import freshDonutImg from './assets/images/regenerated_image_1778274801132.jpg';
 import experienceImg from './assets/images/regenerated_image_1778421341085.png';
 import vanillaCakeImg from './assets/images/regenerated_image_1778436603076.jpg';
 import fruitCakeImg from './assets/images/regenerated_image_1778437001047.jpg';
+import marbleCakeImg from './assets/images/regenerated_image_1778676112884.jpg';
 
 const VIDEOS = {
   hero: "https://assets.mixkit.co/videos/preview/mixkit-freshly-baked-bread-in-a-bakery-4100-large.mp4",
@@ -39,7 +40,8 @@ const PRICE_LIST = [
   { id: 3, category: "Menu", name: "Fresh Donut", price: "150", unit: "", urdu: "تازہ ڈونٹس", image: freshDonutImg },
   { id: 15, category: "Menu", name: "Vanilla Cake", price: "750", unit: "/ lb", urdu: "ونیلا کیک", image: vanillaCakeImg },
   { id: 16, category: "Menu", name: "Fruit Cake", price: "500", unit: "/ lb", urdu: "فروٹ کیک", image: fruitCakeImg },
-  { id: 14, category: "Menu", name: "Cookies", price: "1000", unit: "/ kg", urdu: "کوکیز", image: "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&q=80&w=800" }
+  { id: 14, category: "Menu", name: "Cookies", price: "1000", unit: "/ kg", urdu: "کوکیز", image: "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&q=80&w=800" },
+  { id: 17, category: "Menu", name: "Marble Cake", price: "800", unit: "/ lb", urdu: "ماربل کیک", image: marbleCakeImg }
 ];
 
 const ADDONS = [
@@ -210,6 +212,15 @@ function MainApp() {
                        <Instagram className="w-4 h-4 md:w-6 md:h-6" /> Instagram
                     </a>
 
+                    <a 
+                      href={`https://wa.me/923120402140?text=${encodeURIComponent("Hello! I am interested in your online baking classes. Please provide more details.")}`} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="w-full sm:w-auto px-6 py-4 md:px-10 md:py-6 border border-bakery-gold/40 bg-bakery-gold/10 hover:bg-bakery-gold/20 backdrop-blur-md rounded-full font-bold tracking-widest uppercase text-[10px] md:text-sm text-bakery-gold transition-all shadow-xl flex items-center justify-center gap-2 group/btn"
+                    >
+                       <Video className="w-4 h-4 md:w-6 md:h-6 group-hover/btn:scale-110 transition-transform" /> Online Class Available
+                    </a>
+
                     <div className="w-full sm:w-auto px-6 py-4 md:px-10 md:py-6 border border-bakery-gold/20 bg-bakery-gold/5 backdrop-blur-md rounded-full font-bold tracking-widest uppercase text-[10px] md:text-sm text-bakery-gold shadow-xl flex items-center justify-center gap-2">
                       <Phone className="w-4 h-4 md:w-6 md:h-6 opacity-50" /> +92 312 0402140
                     </div>
@@ -317,13 +328,13 @@ function MainApp() {
                                 href={`https://wa.me/923120402140?text=${encodeURIComponent(`Hello! I would like to order the ${item.name} (${item.urdu}) from your menu.`)}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex flex-col items-center gap-4 md:gap-6 bg-white/[0.03] border border-white/5 hover:border-bakery-gold/40 rounded-[1.5rem] md:rounded-[2.5rem] p-5 md:p-8 transition-all duration-500 w-[95%] md:w-full max-w-[320px] md:max-w-none text-center relative backdrop-blur-sm group-hover:bg-bakery-gold/[0.05] overflow-hidden"
+                                className="flex flex-col items-center gap-3 md:gap-6 bg-white/[0.03] border border-white/5 hover:border-bakery-gold/40 rounded-[1.2rem] md:rounded-[2.5rem] p-4 md:p-8 transition-all duration-500 w-[95%] md:w-full max-w-[260px] md:max-w-none text-center relative backdrop-blur-sm group-hover:bg-bakery-gold/[0.05] overflow-hidden"
                               >
                                 {/* Glow effect inside individual item box */}
                                 <div className="absolute inset-0 bg-gradient-to-b from-bakery-gold/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                                 
                                 {/* Product Image - Centered on top */}
-                                <div className="relative w-24 h-24 md:w-40 md:h-40 rounded-full md:rounded-[2rem] overflow-hidden shadow-2xl border border-white/10 group-hover:border-bakery-gold/30 transition-all duration-700">
+                                <div className="relative w-20 h-20 md:w-40 md:h-40 rounded-full md:rounded-[2rem] overflow-hidden shadow-2xl border border-white/10 group-hover:border-bakery-gold/30 transition-all duration-700">
                                   <img 
                                     src={item.image} 
                                     alt={item.name} 
@@ -332,28 +343,28 @@ function MainApp() {
                                 </div>
 
                                 {/* Product Content - Below image */}
-                                <div className="flex flex-col items-center space-y-2 md:space-y-4 relative z-10 w-full">
+                                <div className="flex flex-col items-center space-y-1.5 md:space-y-4 relative z-10 w-full">
                                   <div className="flex flex-col items-center justify-center w-full">
-                                    <h4 className="text-lg md:text-3xl font-serif text-white group-hover:text-bakery-gold transition-colors leading-tight">
+                                    <h4 className="text-[13px] md:text-3xl font-serif text-white group-hover:text-bakery-gold transition-colors leading-tight">
                                       {item.name}
                                     </h4>
-                                    <p className="text-[10px] md:text-base text-white/40 italic font-medium tracking-wide mt-1">
+                                    <p className="text-[8px] md:text-base text-white/40 italic font-medium tracking-wide mt-0.5">
                                       {item.urdu}
                                     </p>
                                   </div>
                                   
-                                  <div className="h-[1px] w-16 md:w-32 bg-gradient-to-r from-transparent via-bakery-gold/30 to-transparent" />
+                                  <div className="h-[1px] w-12 md:w-32 bg-gradient-to-r from-transparent via-bakery-gold/30 to-transparent" />
                                   
-                                  <div className="flex flex-col items-center gap-1">
-                                    <div className="text-bakery-gold font-bold text-xl md:text-4xl tracking-tighter">
+                                  <div className="flex flex-col items-center gap-0.5">
+                                    <div className="text-bakery-gold font-bold text-lg md:text-4xl tracking-tighter">
                                       Rs.{item.price}
                                     </div>
-                                    <div className="text-[8px] md:text-sm text-white/20 uppercase tracking-[0.2em] font-light">
+                                    <div className="text-[7px] md:text-sm text-white/20 uppercase tracking-[0.2em] font-light">
                                       per {item.unit || "item"}
                                     </div>
                                   </div>
 
-                                  <div className="flex items-center justify-center gap-3 md:gap-6 text-[8px] md:text-xs text-white/40 font-medium pt-2">
+                                  <div className="flex items-center justify-center gap-2 md:gap-6 text-[7px] md:text-xs text-white/40 font-medium pt-1">
                                     <span className="flex items-center gap-1.5">
                                       <div className="w-1 h-1 rounded-full bg-bakery-gold" />
                                       Fresh
