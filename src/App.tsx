@@ -20,6 +20,8 @@ import vanillaCakeImg from './assets/images/regenerated_image_1778436603076.jpg'
 import fruitCakeImg from './assets/images/regenerated_image_1778437001047.jpg';
 import marbleCakeImg from './assets/images/regenerated_image_1778676112884.jpg';
 import customizedCakeImg from './assets/images/regenerated_image_1778684733597.png';
+import nutellaMaltCakeImg from './assets/images/regenerated_image_1778847070069.png';
+import dollCakeImg from './assets/images/regenerated_image_1778847683149.png';
 
 const VIDEOS = {
   hero: "https://assets.mixkit.co/videos/preview/mixkit-freshly-baked-bread-in-a-bakery-4100-large.mp4",
@@ -32,7 +34,7 @@ const PRICE_LIST = [
   { id: 4, category: "Menu", name: "Red Velvet Cake", price: "2000", unit: "/ lb", urdu: "ریڈ وایلویٹ کیک", image: redVelvetCakeImg },
   { id: 5, category: "Menu", name: "Pineapple Cake", price: "1200", unit: "/ lb", urdu: "رنگین عید کیک", image: pineappleCakeImg },
   { id: 6, category: "Menu", name: "Chocolate Cake", price: "1500", unit: "/ lb", urdu: "کٹھائی میٹھی کیک", image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&q=80&w=800" },
-  { id: 11, category: "Menu", name: "Nutella Malt Cake", price: "3000", unit: "/ lb", urdu: "نٹیلا مالٹ کیک", image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&q=80&w=800" },
+  { id: 11, category: "Menu", name: "Nutella Malt Cake", price: "3000", unit: "/ lb", urdu: "نٹیلا مالٹ کیک", image: nutellaMaltCakeImg },
   { id: 13, category: "Menu", name: "Full Fondant Cake", price: "1500", unit: "/ lb", urdu: "فل فونڈنٹ کیک", image: "https://images.unsplash.com/photo-1535141192574-5d4897c12636?auto=format&fit=crop&q=80&w=800" },
   { id: 1, category: "Menu", name: "Simple Cupcake", price: "100", unit: "", urdu: "سادہ کپ کیک", image: "https://images.unsplash.com/photo-1550617931-e17a7b70dce2?auto=format&fit=crop&q=80&w=800" },
   { id: 12, category: "Menu", name: "Customized Cupcake", price: "150", unit: "", urdu: "کسٹمائزڈ کپ کیک", image: "https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&fit=crop&q=80&w=800" },
@@ -43,7 +45,7 @@ const PRICE_LIST = [
   { id: 16, category: "Menu", name: "Fruit Cake", price: "500", unit: "/ lb", urdu: "فروٹ کیک", image: fruitCakeImg },
   { id: 14, category: "Menu", name: "Cookies", price: "1000", unit: "/ kg", urdu: "کوکیز", image: "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&q=80&w=800" },
   { id: 17, category: "Menu", name: "Marble Cake", price: "800", unit: "/ lb", urdu: "ماربل کیک", image: marbleCakeImg },
-  { id: 18, category: "Menu", name: "Doll Cake", price: "1200", unit: "/ lb", urdu: "ڈول کیک", image: "https://images.unsplash.com/photo-1542826438-bd32f43d626f?auto=format&fit=crop&q=80&w=800" }
+  { id: 18, category: "Menu", name: "Doll Cake", price: "1200", unit: "/ lb", urdu: "ڈول کیک", image: dollCakeImg }
 ];
 
 const ADDONS = [
