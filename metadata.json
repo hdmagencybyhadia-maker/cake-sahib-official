@@ -1,6 +1,7 @@
 {
   "name": "Cake Sahib",
-  "description": "A cinematic digital experience of a modern bakery with premium aesthetics, vibrant lighting, and a luxury atmosphere.",
-  "requestFramePermissions": [],
-  "majorCapabilities": []
+  "description": "The Royal Art of Confectionery - Premium home bakery established in 2020.",
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }
