@@ -15,6 +15,9 @@ import donutImg from './assets/images/regenerated_image_1779043698981.jpg';
 import vanillaCakeImg from './assets/images/regenerated_image_1779044248814.jpg';
 import fruitCakeImg from './assets/images/regenerated_image_1779044250179.jpg';
 import marbleCakeImg from './assets/images/regenerated_image_1779044251243.jpg';
+import bornBabyCakeImg from './assets/images/regenerated_image_1779219623568.jpg';
+import dollCakeImg from './assets/images/regenerated_image_1779219624996.jpg';
+import carCakeImg from './assets/images/regenerated_image_1779219626118.jpg';
 
 const CAKE_COLLECTION = [
   { id: 1, name: "Customized Cake", price: "1400", unit: "/ lb", urdu: "کسٹمائزڈ کیک", image: customizedCakeImg },
@@ -32,6 +35,9 @@ const CAKE_COLLECTION = [
   { id: 13, name: "Fruit Cake", price: "500", unit: "/ lb", urdu: "فروٹ کیک", image: fruitCakeImg },
   { id: 14, name: "Cookies", price: "1000", unit: "/ kg", urdu: "کوکیز", image: "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&q=80&w=800" },
   { id: 15, name: "Marble Cake", price: "800", unit: "/ lb", urdu: "ماربل کیک", image: marbleCakeImg },
+  { id: 16, name: "Born Baby Cake", price: "1500", unit: "/ lb", urdu: "بورن بیبی کیک", image: bornBabyCakeImg },
+  { id: 17, name: "Doll Cake", price: "1500", unit: "/ lb", urdu: "ڈول کیک", image: dollCakeImg },
+  { id: 18, name: "Car Cake", price: "1300", unit: "/ lb", urdu: "کار کیک", image: carCakeImg },
 ];
 
 export default function App() {
@@ -49,7 +55,7 @@ export default function App() {
             >
               {isMenuOpen ? <X /> : <MenuIcon />}
             </button>
-            <div className="w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden border border-bakery-gold/20 flex-shrink-0">
+            <div className="w-8 h-8 md:w-10 md:h-10 rounded-full overflow-hidden border border-bakery-gold/20 flex-shrink-0">
               <img src={logoImg} className="w-full h-full object-cover" alt="Cake Sahib Logo" />
             </div>
             <div className="flex flex-col">
@@ -225,6 +231,9 @@ export default function App() {
                     <p className="text-[8px] md:text-xs text-white/40 italic">{item.urdu}</p>
                   </div>
                   <div className="text-bakery-gold font-bold text-sm md:text-xl">Rs.{item.price}</div>
+                  <p className="text-[5px] md:text-[8px] text-white/20 leading-relaxed px-2 font-light">
+                    We offer fresh and delicious cakes, renowned throughout the city for their exceptional taste.
+                  </p>
                   <button className="text-[8px] md:text-[10px] tracking-widest text-[#c5a059] uppercase font-bold border-t border-white/10 pt-2 w-full">Order Now</button>
                 </div>
               </motion.div>
@@ -234,28 +243,28 @@ export default function App() {
       </section>
 
       {/* Urdu Quote Section */}
-      <section className="py-32 px-4 relative flex flex-col items-center justify-center overflow-hidden">
+      <section className="py-8 px-4 relative flex flex-col items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-[#0c0414]/90 z-10" />
         <img 
           src={urduBgImg} 
           className="absolute inset-0 w-full h-full object-cover"
           alt="Bakery BG"
         />
-        <div className="relative z-20 text-center max-w-2xl px-4">
-          <p className="text-[10px] tracking-[0.5em] text-bakery-gold/80 uppercase font-bold mb-8">Order via WhatsApp</p>
-          <h2 className="text-5xl md:text-7xl font-urdu mb-12 leading-[1.6] text-white">
+        <div className="relative z-20 text-center max-w-lg px-4">
+          <p className="text-[7px] tracking-[0.5em] text-bakery-gold/80 uppercase font-bold mb-3">Order via WhatsApp</p>
+          <h2 className="text-2xl md:text-4xl font-urdu mb-4 leading-[1.6] text-white">
             ہماری مٹھاس<br />
             آپ کی خوشیاں
           </h2>
-          <button className="px-10 py-4 bg-[#25d366] text-white rounded-full font-bold tracking-widest uppercase flex items-center gap-3 mx-auto hover:scale-105 transition-transform">
+          <button className="px-5 py-2 bg-[#25d366] text-white rounded-full font-bold tracking-widest uppercase flex items-center gap-2 mx-auto hover:scale-105 transition-transform text-[10px]">
             Connect Now
-            <Send size={18} />
+            <Send size={12} />
           </button>
           
-          <div className="mt-12 flex items-center justify-center gap-2 py-2 px-6 border border-white/10 bg-black/40 rounded-lg">
-             <span className="text-[9px] tracking-widest text-white/60 uppercase">Designed & Developed by</span>
-             <span className="text-[9px] font-bold text-bakery-gold uppercase">Muhammad Bin Nadeem</span>
-             <Instagram size={12} className="text-white/60" />
+          <div className="mt-6 flex items-center justify-center gap-2 py-1 px-3 border border-white/10 bg-black/40 rounded-lg">
+             <span className="text-[6px] tracking-widest text-white/60 uppercase">Designed & Developed by</span>
+             <span className="text-[6px] font-bold text-bakery-gold uppercase">Muhammad Bin Nadeem</span>
+             <Instagram size={7} className="text-white/60" />
           </div>
         </div>
       </section>
