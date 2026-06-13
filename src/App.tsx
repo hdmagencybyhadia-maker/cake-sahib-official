@@ -81,6 +81,29 @@ export default function App() {
             </div>
           </div>
         </div>
+        {/* Mobile Navigation Menu */}
+        {isMenuOpen && (
+          <div className="md:hidden bg-[#0c0414]/95 border-t border-white/5 px-6 py-6 flex flex-col gap-4 text-xs font-semibold tracking-[0.2em] text-white/70 uppercase">
+            {["Collections", "Menu", "Our Story", "Boutique", "Journal"].map((item) => (
+              <a 
+                key={item} 
+                href={`#${item.toLowerCase().replace(' ', '-')}`} 
+                onClick={() => setIsMenuOpen(false)}
+                className="hover:text-bakery-gold transition-colors py-2 border-b border-white/5 last:border-0"
+              >
+                {item}
+              </a>
+            ))}
+            <a 
+              href="tel:+923120402140" 
+              className="flex items-center gap-2 text-xs text-white/80 hover:text-bakery-gold transition-colors py-2"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <Phone size={14} />
+              <span>03120402140</span>
+            </a>
+          </div>
+        )}
       </nav>
 
       {/* Hero Section */}
@@ -248,7 +271,17 @@ export default function App() {
                 viewport={{ once: true }}
                 className="group relative"
               >
-                <div className="flex flex-col items-center gap-3 p-4 bg-white/[0.02] border border-white/5 rounded-2xl hover:border-bakery-gold/40 transition-all duration-500 text-center">
+                <a
+                  href={`https://wa.me/923120402140?text=${encodeURIComponent(
+                    `Hello Cake Sahib! I would like to place an order for:\n` +
+                    `- Product Name: ${item.name} (${item.urdu})\n` +
+                    `- Price: Rs. ${item.price} ${item.unit}\n\n` +
+                    `Please guide me with the booking details. Thank you!`
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center gap-3 p-4 bg-white/[0.02] border border-white/5 rounded-2xl hover:border-bakery-gold/40 transition-all duration-500 text-center h-full cursor-pointer block"
+                >
                   <div className="relative w-32 h-32 md:w-56 md:h-56 rounded-full overflow-hidden border-2 border-white/10 group-hover:border-bakery-gold transition-colors">
                     <img src={item.image} alt={item.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                   </div>
@@ -260,20 +293,10 @@ export default function App() {
                   <p className="text-[5px] md:text-[8px] text-white/20 leading-relaxed px-2 font-light">
                     We offer fresh and delicious cakes, renowned throughout the city for their exceptional taste.
                   </p>
-                  <a
-                    href={`https://wa.me/923120402140?text=${encodeURIComponent(
-                      `Hello Cake Sahib! I would like to place an order for:\n` +
-                      `- Product Name: ${item.name} (${item.urdu})\n` +
-                      `- Price: Rs. ${item.price} ${item.unit}\n\n` +
-                      `Please guide me with the booking details. Thank you!`
-                    )}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[8px] md:text-[10px] tracking-widest text-[#c5a059] uppercase font-bold border-t border-white/10 pt-2 w-full text-center hover:text-white transition-colors"
-                  >
+                  <span className="text-[8px] md:text-[10px] tracking-widest text-[#c5a059] uppercase font-bold border-t border-white/10 pt-2 w-full text-center hover:text-white transition-colors">
                     Order Now
-                  </a>
-                </div>
+                  </span>
+                </a>
               </motion.div>
             ))}
           </div>
