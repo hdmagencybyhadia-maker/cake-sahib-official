@@ -145,24 +145,50 @@ export default function App() {
 
         {/* Hero Buttons */}
         <div className="mt-12 flex flex-wrap justify-center gap-4 px-4 w-full max-w-2xl">
-          <button className="flex-1 min-w-[160px] h-12 rounded-full border border-bakery-gold/30 flex items-center justify-center gap-2 text-[11px] font-bold tracking-widest uppercase hover:bg-bakery-gold/10 transition-colors">
+          <a 
+            href={`https://wa.me/923120402140?text=${encodeURIComponent(
+              "Hello Cake Sahib! I would like to get in touch with you regarding custom orders or general inquiries.\n\nThank you!"
+            )}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 min-w-[160px] h-12 rounded-full border border-bakery-gold/30 flex items-center justify-center gap-2 text-[11px] font-bold tracking-widest uppercase hover:bg-bakery-gold/10 transition-colors text-center"
+          >
             <Phone size={14} className="text-bakery-gold" />
             Contact
-          </button>
-          <button className="flex-1 min-w-[160px] h-12 rounded-full border border-bakery-gold/30 flex items-center justify-center gap-2 text-[11px] font-bold tracking-widest uppercase hover:bg-bakery-gold/10 transition-colors">
+          </a>
+          <a 
+            href="https://instagram.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 min-w-[160px] h-12 rounded-full border border-bakery-gold/30 flex items-center justify-center gap-2 text-[11px] font-bold tracking-widest uppercase hover:bg-bakery-gold/10 transition-colors text-center"
+          >
             <Instagram size={14} className="text-bakery-gold" />
             Instagram
-          </button>
-          <button className="flex-1 min-w-[200px] h-12 rounded-full border border-bakery-gold/30 flex items-center justify-center gap-2 text-[11px] font-bold tracking-widest uppercase hover:bg-bakery-gold/10 transition-colors">
+          </a>
+          <a 
+            href={`https://wa.me/923120402140?text=${encodeURIComponent(
+              "Hello Cake Sahib! I am highly interested in joining your Online Baking Classes. Please provide me with the class details, packages, and schedules.\n\nThank you!"
+            )}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 min-w-[200px] h-12 rounded-full border border-bakery-gold/30 flex items-center justify-center gap-2 text-[11px] font-bold tracking-widest uppercase hover:bg-bakery-gold/10 transition-colors text-center"
+          >
             <Send size={14} className="text-bakery-gold" />
             Online Class Available
-          </button>
+          </a>
         </div>
         
-        <button className="mt-8 px-8 py-3 rounded-full bg-bakery-gold/5 border border-bakery-gold/20 text-[12px] font-bold text-bakery-gold tracking-[0.2em] hover:bg-bakery-gold/20 transition-all flex items-center gap-3">
+        <a 
+          href={`https://wa.me/923120402140?text=${encodeURIComponent(
+            "Hello Cake Sahib! I want to get in touch regarding custom orders or general inquiries. Please guide me.\n\nThank you!"
+          )}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-8 px-8 py-3 rounded-full bg-bakery-gold/5 border border-bakery-gold/20 text-[12px] font-bold text-bakery-gold tracking-[0.2em] hover:bg-bakery-gold/20 transition-all flex items-center gap-3"
+        >
           <Phone size={14} />
           +92 312 0402140
-        </button>
+        </a>
       </section>
 
       {/* Beyond Confectionery Section */}
@@ -234,7 +260,19 @@ export default function App() {
                   <p className="text-[5px] md:text-[8px] text-white/20 leading-relaxed px-2 font-light">
                     We offer fresh and delicious cakes, renowned throughout the city for their exceptional taste.
                   </p>
-                  <button className="text-[8px] md:text-[10px] tracking-widest text-[#c5a059] uppercase font-bold border-t border-white/10 pt-2 w-full">Order Now</button>
+                  <a
+                    href={`https://wa.me/923120402140?text=${encodeURIComponent(
+                      `Hello Cake Sahib! I would like to place an order for:\n` +
+                      `- Product Name: ${item.name} (${item.urdu})\n` +
+                      `- Price: Rs. ${item.price} ${item.unit}\n\n` +
+                      `Please guide me with the booking details. Thank you!`
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[8px] md:text-[10px] tracking-widest text-[#c5a059] uppercase font-bold border-t border-white/10 pt-2 w-full text-center hover:text-white transition-colors"
+                  >
+                    Order Now
+                  </a>
                 </div>
               </motion.div>
             ))}
@@ -256,10 +294,17 @@ export default function App() {
             ہماری مٹھاس<br />
             آپ کی خوشیاں
           </h2>
-          <button className="px-5 py-2 bg-[#25d366] text-white rounded-full font-bold tracking-widest uppercase flex items-center gap-2 mx-auto hover:scale-105 transition-transform text-[10px]">
+          <a
+            href={`https://wa.me/923120402140?text=${encodeURIComponent(
+              "Hello Cake Sahib! I visited your website and would like to order delicious cakes. Please let me know how to proceed.\n\nThank you!"
+            )}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-5 py-2 bg-[#25d366] text-white rounded-full font-bold tracking-widest uppercase flex items-center gap-2 mx-auto hover:scale-105 transition-transform text-[10px] text-center inline-flex"
+          >
             Connect Now
             <Send size={12} />
-          </button>
+          </a>
           
           <div className="mt-6 flex items-center justify-center gap-2 py-1 px-3 border border-white/10 bg-black/40 rounded-lg">
              <span className="text-[6px] tracking-widest text-white/60 uppercase">Designed & Developed by</span>
